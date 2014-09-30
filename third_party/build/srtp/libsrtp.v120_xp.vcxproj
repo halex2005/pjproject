@@ -51,90 +51,74 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>libg7221codec</ProjectName>
-    <ProjectGuid>{2A3F241E-682C-47E1-9543-DC28708B406A}</ProjectGuid>
-    <RootNamespace>libg7221codec</RootNamespace>
+    <ProjectName>libsrtp</ProjectName>
+    <ProjectGuid>{F0DBAA03-1BA3-4E3B-A2CA-727E3D3AB858}</ProjectGuid>
+    <RootNamespace>libsrtp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -146,12 +130,12 @@
     <Import Project="..\..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
@@ -161,10 +145,10 @@
     <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -176,12 +160,12 @@
     <Import Project="..\..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
@@ -191,36 +175,18 @@
     <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
     <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
   </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -233,7 +199,7 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -242,9 +208,32 @@
       <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -257,57 +246,10 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
       <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
@@ -315,7 +257,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -328,7 +270,54 @@
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;../../srtp/include;../../srtp/crypto/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
@@ -337,29 +326,62 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\g7221\common\basic_op.c" />
-    <ClCompile Include="..\..\g7221\common\common.c" />
-    <ClCompile Include="..\..\g7221\common\huff_tab.c" />
-    <ClCompile Include="..\..\g7221\common\tables.c" />
-    <ClCompile Include="..\..\g7221\decode\coef2sam.c" />
-    <ClCompile Include="..\..\g7221\decode\dct4_s.c" />
-    <ClCompile Include="..\..\g7221\decode\decoder.c" />
-    <ClCompile Include="..\..\g7221\encode\dct4_a.c" />
-    <ClCompile Include="..\..\g7221\encode\encoder.c" />
-    <ClCompile Include="..\..\g7221\encode\sam2coef.c" />
+    <ClCompile Include="..\..\srtp\crypto\ae_xfm\xfm.c" />
+    <ClCompile Include="..\..\srtp\crypto\cipher\aes.c" />
+    <ClCompile Include="..\..\srtp\crypto\cipher\aes_cbc.c" />
+    <ClCompile Include="..\..\srtp\crypto\cipher\aes_icm.c" />
+    <ClCompile Include="..\..\srtp\crypto\cipher\cipher.c" />
+    <ClCompile Include="..\..\srtp\crypto\cipher\null_cipher.c" />
+    <ClCompile Include="..\..\srtp\crypto\hash\auth.c" />
+    <ClCompile Include="..\..\srtp\crypto\hash\hmac.c" />
+    <ClCompile Include="..\..\srtp\crypto\hash\null_auth.c" />
+    <ClCompile Include="..\..\srtp\crypto\hash\sha1.c" />
+    <ClCompile Include="..\..\srtp\crypto\kernel\alloc.c" />
+    <ClCompile Include="..\..\srtp\crypto\kernel\crypto_kernel.c" />
+    <ClCompile Include="..\..\srtp\crypto\kernel\key.c" />
+    <ClCompile Include="..\..\srtp\crypto\math\datatypes.c" />
+    <ClCompile Include="..\..\srtp\crypto\math\gf2_8.c" />
+    <ClCompile Include="..\..\srtp\crypto\math\stat.c" />
+    <ClCompile Include="..\..\srtp\crypto\replay\rdb.c" />
+    <ClCompile Include="..\..\srtp\crypto\replay\rdbx.c" />
+    <ClCompile Include="..\..\srtp\crypto\rng\ctr_prng.c" />
+    <ClCompile Include="..\..\srtp\crypto\rng\prng.c" />
+    <ClCompile Include="..\..\srtp\crypto\rng\rand_source.c" />
+    <ClCompile Include="..\..\srtp\pjlib\srtp_err.c" />
+    <ClCompile Include="..\..\srtp\srtp\srtp.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\g7221\common\basic_op.h" />
-    <ClInclude Include="..\..\g7221\common\basic_op_i.h" />
-    <ClInclude Include="..\..\g7221\common\config.h" />
-    <ClInclude Include="..\..\g7221\common\count.h" />
-    <ClInclude Include="..\..\g7221\common\defs.h" />
-    <ClInclude Include="..\..\g7221\common\huff_def.h" />
-    <ClInclude Include="..\..\g7221\common\huff_tab.h" />
-    <ClInclude Include="..\..\g7221\common\tables.h" />
-    <ClInclude Include="..\..\g7221\common\typedef.h" />
-    <ClInclude Include="..\..\g7221\decode\dct4_s.h" />
-    <ClInclude Include="..\..\g7221\encode\dct4_a.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\aes.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\aes_cbc.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\aes_icm.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\alloc.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\auth.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\cipher.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\crypto.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\cryptoalg.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\crypto_kernel.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\crypto_math.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\crypto_types.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\datatypes.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\err.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\gf2_8.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\hmac.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\integers.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\kernel_compat.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\key.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\null_auth.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\null_cipher.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\prng.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\rand_source.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\rdb.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\rdbx.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\sha1.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\stat.h" />
+    <ClInclude Include="..\..\srtp\crypto\include\xfm.h" />
+    <ClInclude Include="..\..\srtp\include\rtp.h" />
+    <ClInclude Include="..\..\srtp\include\srtp.h" />
+    <ClInclude Include="..\..\srtp\include\ut_sim.h" />
+    <ClInclude Include="srtp_config.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

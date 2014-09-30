@@ -200,13 +200,13 @@
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Midl>
@@ -216,26 +216,26 @@
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'">
     <Midl>
@@ -246,26 +246,26 @@
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
     <Midl>
@@ -276,26 +276,26 @@
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
@@ -306,26 +306,26 @@
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>_DEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'">
     <Midl>
@@ -335,26 +335,26 @@
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
     <Midl>
@@ -364,13 +364,13 @@
       <AdditionalIncludeDirectories>.;../../baseclasses;../../../pjmedia/include;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;_WIN32_DCOM;WINVER=0x400;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
+    <Lib>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
+    </Lib>
     <ResourceCompile>
       <PreprocessorDefinitions>NDEBUG;WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <Culture>0x0409</Culture>
     </ResourceCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\BaseClasses\amfilter.cpp" />

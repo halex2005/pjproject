@@ -51,315 +51,299 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>libg7221codec</ProjectName>
-    <ProjectGuid>{2A3F241E-682C-47E1-9543-DC28708B406A}</ProjectGuid>
-    <RootNamespace>libg7221codec</RootNamespace>
+    <ProjectName>pjmedia_codec</ProjectName>
+    <ProjectGuid>{855DC8C0-D3E9-4A2E-AE47-116605A7BC9B}</ProjectGuid>
+    <RootNamespace>pjmedia_codec</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
-    <UseOfMfc>false</UseOfMfc>
-    <CharacterSet>MultiByte</CharacterSet>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v120_xp</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <PlatformToolset>v120_xp</PlatformToolset>
     <UseOfMfc>false</UseOfMfc>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
-  </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-release-defaults.props" />
   </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win32-common-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
-  </ImportGroup>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
-    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
   </ImportGroup>
   <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
-    <Import Project="..\..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-release-dynamic-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-release-defaults.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\build\vs\pjproject-vs8-debug-static-defaults.props" />
+    <Import Project="..\..\build\vs\pjproject-vs8-win64-common-defaults.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
   </PropertyGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Midl>
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'">
     <Midl>
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
-    <Midl>
-      <TargetEnvironment>X64</TargetEnvironment>
-    </Midl>
-    <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderOutputFile />
-    </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'">
     <Midl>
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <ClCompile>
-      <AdditionalIncludeDirectories>../..;../../g7221/common;../../../pjlib/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeaderOutputFile />
     </ClCompile>
-    <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
-    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>../include;../../pjlib/include;../../third_party/speex/include;../../third_party;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeaderOutputFile />
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\g7221\common\basic_op.c" />
-    <ClCompile Include="..\..\g7221\common\common.c" />
-    <ClCompile Include="..\..\g7221\common\huff_tab.c" />
-    <ClCompile Include="..\..\g7221\common\tables.c" />
-    <ClCompile Include="..\..\g7221\decode\coef2sam.c" />
-    <ClCompile Include="..\..\g7221\decode\dct4_s.c" />
-    <ClCompile Include="..\..\g7221\decode\decoder.c" />
-    <ClCompile Include="..\..\g7221\encode\dct4_a.c" />
-    <ClCompile Include="..\..\g7221\encode\encoder.c" />
-    <ClCompile Include="..\..\g7221\encode\sam2coef.c" />
+    <ClCompile Include="..\src\pjmedia-codec\amr_sdp_match.c" />
+    <ClCompile Include="..\src\pjmedia-codec\audio_codecs.c" />
+    <ClCompile Include="..\src\pjmedia-codec\ffmpeg_vid_codecs.c" />
+    <ClCompile Include="..\src\pjmedia-codec\g722.c" />
+    <ClCompile Include="..\src\pjmedia-codec\g7221.c" />
+    <ClCompile Include="..\src\pjmedia-codec\g7221_sdp_match.c" />
+    <ClCompile Include="..\src\pjmedia-codec\g722\g722_dec.c" />
+    <ClCompile Include="..\src\pjmedia-codec\g722\g722_enc.c" />
+    <ClCompile Include="..\src\pjmedia-codec\gsm.c" />
+    <ClCompile Include="..\src\pjmedia-codec\h263_packetizer.c" />
+    <ClCompile Include="..\src\pjmedia-codec\h264_packetizer.c" />
+    <ClCompile Include="..\src\pjmedia-codec\ilbc.c" />
+    <ClCompile Include="..\src\pjmedia-codec\ipp_codecs.c" />
+    <ClCompile Include="..\src\pjmedia-codec\l16.c" />
+    <ClCompile Include="..\src\pjmedia-codec\opencore_amr.c" />
+    <ClCompile Include="..\src\pjmedia-codec\openh264.cpp" />
+    <ClCompile Include="..\src\pjmedia-codec\passthrough.c" />
+    <ClCompile Include="..\src\pjmedia-codec\silk.c" />
+    <ClCompile Include="..\src\pjmedia-codec\speex_codec.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\g7221\common\basic_op.h" />
-    <ClInclude Include="..\..\g7221\common\basic_op_i.h" />
-    <ClInclude Include="..\..\g7221\common\config.h" />
-    <ClInclude Include="..\..\g7221\common\count.h" />
-    <ClInclude Include="..\..\g7221\common\defs.h" />
-    <ClInclude Include="..\..\g7221\common\huff_def.h" />
-    <ClInclude Include="..\..\g7221\common\huff_tab.h" />
-    <ClInclude Include="..\..\g7221\common\tables.h" />
-    <ClInclude Include="..\..\g7221\common\typedef.h" />
-    <ClInclude Include="..\..\g7221\decode\dct4_s.h" />
-    <ClInclude Include="..\..\g7221\encode\dct4_a.h" />
+    <ClInclude Include="..\include\pjmedia-codec.h" />
+    <ClInclude Include="..\include\pjmedia-codec\amr_helper.h" />
+    <ClInclude Include="..\include\pjmedia-codec\amr_sdp_match.h" />
+    <ClInclude Include="..\include\pjmedia-codec\audio_codecs.h" />
+    <ClInclude Include="..\include\pjmedia-codec\config.h" />
+    <ClInclude Include="..\include\pjmedia-codec\ffmpeg_vid_codecs.h" />
+    <ClInclude Include="..\include\pjmedia-codec\g722.h" />
+    <ClInclude Include="..\include\pjmedia-codec\g7221.h" />
+    <ClInclude Include="..\include\pjmedia-codec\g7221_sdp_match.h" />
+    <ClInclude Include="..\include\pjmedia-codec\gsm.h" />
+    <ClInclude Include="..\include\pjmedia-codec\h263_packetizer.h" />
+    <ClInclude Include="..\include\pjmedia-codec\h264_packetizer.h" />
+    <ClInclude Include="..\include\pjmedia-codec\ilbc.h" />
+    <ClInclude Include="..\include\pjmedia-codec\ipp_codecs.h" />
+    <ClInclude Include="..\include\pjmedia-codec\l16.h" />
+    <ClInclude Include="..\include\pjmedia-codec\opencore_amr.h" />
+    <ClInclude Include="..\include\pjmedia-codec\passthrough.h" />
+    <ClInclude Include="..\include\pjmedia-codec\silk.h" />
+    <ClInclude Include="..\include\pjmedia-codec\speex.h" />
+    <ClInclude Include="..\include\pjmedia-codec\types.h" />
+    <ClInclude Include="..\src\pjmedia-codec\g722\g722_dec.h" />
+    <ClInclude Include="..\src\pjmedia-codec\g722\g722_enc.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

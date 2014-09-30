@@ -203,7 +203,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -218,7 +217,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -230,7 +228,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -244,7 +241,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -256,7 +252,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'">
@@ -271,7 +266,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -283,7 +277,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'">
@@ -297,7 +290,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -309,7 +301,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
@@ -324,7 +315,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>
@@ -336,7 +326,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
@@ -350,7 +339,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>netapi32.lib;mswsock.lib;ws2_32.lib;odbc32.lib;odbccp32.lib;ole32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>..\bin\pjnath-test-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).exe</OutputFile>
       <TargetMachine>MachineX64</TargetMachine>
     </Link>
   </ItemDefinitionGroup>

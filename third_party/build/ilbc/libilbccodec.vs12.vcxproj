@@ -201,7 +201,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -214,7 +214,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -223,7 +223,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -235,7 +235,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|Win32'">
@@ -244,7 +244,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Static|x64'">
@@ -257,7 +257,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|Win32'">
@@ -266,7 +266,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Dynamic|x64'">
@@ -278,7 +278,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|Win32'">
@@ -287,7 +287,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug-Dynamic|x64'">
@@ -300,7 +300,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|Win32'">
@@ -309,7 +309,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release-Static|x64'">
@@ -321,7 +321,7 @@
       <PrecompiledHeaderOutputFile />
     </ClCompile>
     <Lib>
-      <OutputFile>..\..\lib\$(ProjectName)-$(TargetCPU)-$(Platform)-vc$(VSVer)-$(Configuration).lib</OutputFile>
+      <OutputFile>..\..\lib\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib</OutputFile>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>

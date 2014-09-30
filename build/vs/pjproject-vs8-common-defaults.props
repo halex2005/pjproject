@@ -9,6 +9,7 @@
     <_ProjectFileVersion>12.0.30501.0</_ProjectFileVersion>
     <OutDir>.\output\$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration)\</OutDir>
     <IntDir>$(OutDir)\</IntDir>
+    <TargetName>$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
