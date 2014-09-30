@@ -24,6 +24,7 @@ Licensing
 ---------
 
  Copyright (C) 2003-2008 Benny Prijono <benny@prijono.org>
+
  Copyright (C) 2008-2011 Teluu Inc. (http://www.teluu.com)
 
  This program is free software: you can redistribute it and/or modify it
@@ -39,3 +40,4 @@ Licensing
  You should have received a copy of the GNU General Public License along
  with this program. If not, see http://www.gnu.org/licenses/.
  
+ [For proprietary license from Teluu.com see detailed pjsip licensing information](http://www.pjsip.org/licensing.htm).
