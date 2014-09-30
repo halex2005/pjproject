@@ -411,7 +411,7 @@
     <None Include="JBTEST.DAT" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\pjsip-apps\build\libpjproject.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip-apps\build\libpjproject.v120.vcxproj">
       <Project>{23d7679c-764c-4e02-8b29-bb882ceeefe2}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

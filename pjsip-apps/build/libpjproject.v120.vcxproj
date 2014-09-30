@@ -364,87 +364,87 @@
     <ClCompile Include="dummy.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\pjlib-util\build\pjlib_util.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjlib-util\build\pjlib_util.v120.vcxproj">
       <Project>{fe07f272-ae7f-4549-9e9f-ef9b80cb1693}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjlib\build\pjlib.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjlib\build\pjlib.v120.vcxproj">
       <Project>{da0e03ed-53a7-4050-8a85-90541c5509f8}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjmedia\build\pjmedia.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjmedia\build\pjmedia.v120.vcxproj">
       <Project>{7fde3880-a4ab-49e3-b439-ebef0a0c7a65}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjmedia\build\pjmedia_audiodev.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjmedia\build\pjmedia_audiodev.v120.vcxproj">
       <Project>{4281ca5e-1d48-45d4-a991-2718a454b4ba}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjmedia\build\pjmedia_codec.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjmedia\build\pjmedia_codec.v120.vcxproj">
       <Project>{855dc8c0-d3e9-4a2e-ae47-116605a7bc9b}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjmedia\build\pjmedia_videodev.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjmedia\build\pjmedia_videodev.v120.vcxproj">
       <Project>{a1989ff3-9894-40f4-b5a6-6ea364476e45}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjnath\build\pjnath.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjnath\build\pjnath.v120.vcxproj">
       <Project>{a5d9aa24-08ed-48b9-bd65-f0a25e96bfc4}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjsip\build\pjsip_core.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsip_core.v120.vcxproj">
       <Project>{2bb84911-c1b4-4747-b93d-36aa82cc5031}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjsip\build\pjsip_simple.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsip_simple.v120.vcxproj">
       <Project>{4b5945cd-0cb3-49aa-a7ff-7612d93f82c0}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjsip\build\pjsip_ua.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsip_ua.v120.vcxproj">
       <Project>{b8719fd5-e8a6-4a36-943c-891d07f5dd21}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjsip\build\pjsua2_lib.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsua2_lib.v120.vcxproj">
       <Project>{b82cdd25-6903-430e-bd38-d8129a2015c1}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\pjsip\build\pjsua_lib.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsua_lib.v120.vcxproj">
       <Project>{9ca0fdfb-2172-41fc-b7f1-5ce915edcb37}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\baseclasses\libbaseclasses.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\baseclasses\libbaseclasses.v120.vcxproj">
       <Project>{e8a3f6fa-ae1c-4c8e-a0b6-9c8480324eaa}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\g7221\libg7221codec.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\g7221\libg7221codec.v120.vcxproj">
       <Project>{2a3f241e-682c-47e1-9543-dc28708b406a}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\gsm\libgsmcodec.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\gsm\libgsmcodec.v120.vcxproj">
       <Project>{e53aa5ff-b737-40aa-bd13-387efa99023d}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\ilbc\libilbccodec.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\ilbc\libilbccodec.v120.vcxproj">
       <Project>{b5fe16f8-3edb-4110-bd80-b4238cc01e8d}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\milenage\libmilenage.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\milenage\libmilenage.v120.vcxproj">
       <Project>{4bf51c21-5a30-423b-82fe-1ed410e5769d}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\portaudio\libportaudio.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\portaudio\libportaudio.v120.vcxproj">
       <Project>{3cf9ffa9-8387-4635-9d1b-e7944cbefeaa}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\resample\libresample.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\resample\libresample.v120.vcxproj">
       <Project>{6794b975-4e84-4f49-b2dc-c31f2224e03e}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\speex\libspeex.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\speex\libspeex.v120.vcxproj">
       <Project>{4b059dba-cd9c-4d0f-be8c-ffb4efd498e9}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\..\third_party\build\srtp\libsrtp.vs12.vcxproj">
+    <ProjectReference Include="..\..\third_party\build\srtp\libsrtp.v120.vcxproj">
       <Project>{f0dbaa03-1ba3-4e3b-a2ca-727e3d3ab858}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

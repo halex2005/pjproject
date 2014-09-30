@@ -354,11 +354,11 @@
     <ClCompile Include="..\src\samples\debug.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\pjsip\build\pjsua2_lib.vs12.vcxproj">
+    <ProjectReference Include="..\..\pjsip\build\pjsua2_lib.v120.vcxproj">
       <Project>{b82cdd25-6903-430e-bd38-d8129a2015c1}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="libpjproject.vs12.vcxproj">
+    <ProjectReference Include="libpjproject.v120.vcxproj">
       <Project>{23d7679c-764c-4e02-8b29-bb882ceeefe2}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
