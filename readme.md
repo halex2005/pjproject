@@ -5,9 +5,13 @@ This is an unofficial fork of [great PJSIP library](http://www.pjsip.org) to git
 
 Improvements:
 
-- Added "native" (without migration) support for MS Visual Studio 2013 (solution and projects)
+- Added "native" (without migration) support for MS Visual Studio 2013 (v120 solution and projects)
+- Added "windows xp toolset" support for MS Visual Studio 2013 (`v120_xp` solution and projects).
+  Note that to compile pjsip with `v120_xp` toolset you need to install [DirectX SDK](http://www.microsoft.com/en-us/download/details.aspx?id=6812).
+  Latest DirectX SDK which included in Windows 8 SDK doesn't support Windows XP targeting and v120_xp toolset.
 - Names of libraries for MSVC changed to `$(ProjectName)-$(Platform)-$(PlatformToolset)-$(Configuration).lib`.
   Such naming allow to consume libraries in MSVC more easily (see [CMakeHelpers FindPJSIP.cmake](https://github.com/halex2005/CMakeHelpers/blob/master/FindPJSIP.cmake)).
+
 
 Regression in VS2013:
 
