@@ -24,69 +24,69 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		build\vs\pjproject-vs8-wm6-release-defaults.props = build\vs\pjproject-vs8-wm6-release-defaults.props
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib", "pjlib\build\pjlib.vs12.vcxproj", "{DA0E03ED-53A7-4050-8A85-90541C5509F8}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib", "pjlib\build\pjlib.v120.vcxproj", "{DA0E03ED-53A7-4050-8A85-90541C5509F8}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_test", "pjlib\build\pjlib_test.vs12.vcxproj", "{6AC3EF61-5A9E-4F43-A809-5B2FD1A43B16}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_test", "pjlib\build\pjlib_test.v120.vcxproj", "{6AC3EF61-5A9E-4F43-A809-5B2FD1A43B16}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_util", "pjlib-util\build\pjlib_util.vs12.vcxproj", "{FE07F272-AE7F-4549-9E9F-EF9B80CB1693}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_util", "pjlib-util\build\pjlib_util.v120.vcxproj", "{FE07F272-AE7F-4549-9E9F-EF9B80CB1693}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_util_test", "pjlib-util\build\pjlib_util_test.vs12.vcxproj", "{ED02BE13-8297-4770-8097-27DC2CCABF9A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjlib_util_test", "pjlib-util\build\pjlib_util_test.v120.vcxproj", "{ED02BE13-8297-4770-8097-27DC2CCABF9A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia", "pjmedia\build\pjmedia.vs12.vcxproj", "{7FDE3880-A4AB-49E3-B439-EBEF0A0C7A65}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia", "pjmedia\build\pjmedia.v120.vcxproj", "{7FDE3880-A4AB-49E3-B439-EBEF0A0C7A65}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_codec", "pjmedia\build\pjmedia_codec.vs12.vcxproj", "{855DC8C0-D3E9-4A2E-AE47-116605A7BC9B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_codec", "pjmedia\build\pjmedia_codec.v120.vcxproj", "{855DC8C0-D3E9-4A2E-AE47-116605A7BC9B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_core", "pjsip\build\pjsip_core.vs12.vcxproj", "{2BB84911-C1B4-4747-B93D-36AA82CC5031}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_core", "pjsip\build\pjsip_core.v120.vcxproj", "{2BB84911-C1B4-4747-B93D-36AA82CC5031}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_simple", "pjsip\build\pjsip_simple.vs12.vcxproj", "{4B5945CD-0CB3-49AA-A7FF-7612D93F82C0}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_simple", "pjsip\build\pjsip_simple.v120.vcxproj", "{4B5945CD-0CB3-49AA-A7FF-7612D93F82C0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_ua", "pjsip\build\pjsip_ua.vs12.vcxproj", "{B8719FD5-E8A6-4A36-943C-891D07F5DD21}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_ua", "pjsip\build\pjsip_ua.v120.vcxproj", "{B8719FD5-E8A6-4A36-943C-891D07F5DD21}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua", "pjsip-apps\build\pjsua.vs12.vcxproj", "{8310649E-A25E-4AF0-91E8-9E3CC659BB89}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua", "pjsip-apps\build\pjsua.v120.vcxproj", "{8310649E-A25E-4AF0-91E8-9E3CC659BB89}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua_lib", "pjsip\build\pjsua_lib.vs12.vcxproj", "{9CA0FDFB-2172-41FC-B7F1-5CE915EDCB37}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua_lib", "pjsip\build\pjsua_lib.v120.vcxproj", "{9CA0FDFB-2172-41FC-B7F1-5CE915EDCB37}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sample_debug", "pjsip-apps\build\sample_debug.vs12.vcxproj", "{A0F1AA62-0F6F-420D-B09A-AC04B6862821}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "sample_debug", "pjsip-apps\build\sample_debug.v120.vcxproj", "{A0F1AA62-0F6F-420D-B09A-AC04B6862821}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjnath", "pjnath\build\pjnath.vs12.vcxproj", "{A5D9AA24-08ED-48B9-BD65-F0A25E96BFC4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjnath", "pjnath\build\pjnath.v120.vcxproj", "{A5D9AA24-08ED-48B9-BD65-F0A25E96BFC4}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libgsmcodec", "third_party\build\gsm\libgsmcodec.vs12.vcxproj", "{E53AA5FF-B737-40AA-BD13-387EFA99023D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libgsmcodec", "third_party\build\gsm\libgsmcodec.v120.vcxproj", "{E53AA5FF-B737-40AA-BD13-387EFA99023D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libilbccodec", "third_party\build\ilbc\libilbccodec.vs12.vcxproj", "{B5FE16F8-3EDB-4110-BD80-B4238CC01E8D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libilbccodec", "third_party\build\ilbc\libilbccodec.v120.vcxproj", "{B5FE16F8-3EDB-4110-BD80-B4238CC01E8D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libportaudio", "third_party\build\portaudio\libportaudio.vs12.vcxproj", "{3CF9FFA9-8387-4635-9D1B-E7944CBEFEAA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libportaudio", "third_party\build\portaudio\libportaudio.v120.vcxproj", "{3CF9FFA9-8387-4635-9D1B-E7944CBEFEAA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libresample", "third_party\build\resample\libresample.vs12.vcxproj", "{6794B975-4E84-4F49-B2DC-C31F2224E03E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libresample", "third_party\build\resample\libresample.v120.vcxproj", "{6794B975-4E84-4F49-B2DC-C31F2224E03E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libspeex", "third_party\build\speex\libspeex.vs12.vcxproj", "{4B059DBA-CD9C-4D0F-BE8C-FFB4EFD498E9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libspeex", "third_party\build\speex\libspeex.v120.vcxproj", "{4B059DBA-CD9C-4D0F-BE8C-FFB4EFD498E9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmilenage", "third_party\build\milenage\libmilenage.vs12.vcxproj", "{4BF51C21-5A30-423B-82FE-1ED410E5769D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmilenage", "third_party\build\milenage\libmilenage.v120.vcxproj", "{4BF51C21-5A30-423B-82FE-1ED410E5769D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsrtp", "third_party\build\srtp\libsrtp.vs12.vcxproj", "{F0DBAA03-1BA3-4E3B-A2CA-727E3D3AB858}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libsrtp", "third_party\build\srtp\libsrtp.v120.vcxproj", "{F0DBAA03-1BA3-4E3B-A2CA-727E3D3AB858}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjnath_test", "pjnath\build\pjnath_test.vs12.vcxproj", "{553C094C-F581-4A80-9540-D5D7B398A2C6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjnath_test", "pjnath\build\pjnath_test.v120.vcxproj", "{553C094C-F581-4A80-9540-D5D7B398A2C6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_test", "pjmedia\build\pjmedia_test.vs12.vcxproj", "{21C0CECF-69DD-4F70-BC2B-9B4DE7F15277}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_test", "pjmedia\build\pjmedia_test.v120.vcxproj", "{21C0CECF-69DD-4F70-BC2B-9B4DE7F15277}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_audiodev", "pjmedia\build\pjmedia_audiodev.vs12.vcxproj", "{4281CA5E-1D48-45D4-A991-2718A454B4BA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_audiodev", "pjmedia\build\pjmedia_audiodev.v120.vcxproj", "{4281CA5E-1D48-45D4-A991-2718A454B4BA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libg7221codec", "third_party\build\g7221\libg7221codec.vs12.vcxproj", "{2A3F241E-682C-47E1-9543-DC28708B406A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libg7221codec", "third_party\build\g7221\libg7221codec.v120.vcxproj", "{2A3F241E-682C-47E1-9543-DC28708B406A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "samples", "pjsip-apps\build\samples.vs12.vcxproj", "{E378A1FC-0C9C-4462-860F-7E60BC1BF84E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "samples", "pjsip-apps\build\samples.v120.vcxproj", "{E378A1FC-0C9C-4462-860F-7E60BC1BF84E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_test", "pjsip\build\pjsip_test.vs12.vcxproj", "{B3F7D4E9-702F-4EB4-ADA8-098D0A83D770}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsip_test", "pjsip\build\pjsip_test.v120.vcxproj", "{B3F7D4E9-702F-4EB4-ADA8-098D0A83D770}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpjproject", "pjsip-apps\build\libpjproject.vs12.vcxproj", "{23D7679C-764C-4E02-8B29-BB882CEEEFE2}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libpjproject", "pjsip-apps\build\libpjproject.v120.vcxproj", "{23D7679C-764C-4E02-8B29-BB882CEEEFE2}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "python_pjsua", "pjsip-apps\build\python_pjsua.vs12.vcxproj", "{0C91838B-3372-40B4-A764-DE075A4BC94B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "python_pjsua", "pjsip-apps\build\python_pjsua.v120.vcxproj", "{0C91838B-3372-40B4-A764-DE075A4BC94B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsystest", "pjsip-apps\build\pjsystest.vs12.vcxproj", "{5E507EA2-CB39-47CA-BD39-49EB58D7A0BB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsystest", "pjsip-apps\build\pjsystest.v120.vcxproj", "{5E507EA2-CB39-47CA-BD39-49EB58D7A0BB}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_videodev", "pjmedia\build\pjmedia_videodev.vs12.vcxproj", "{A1989FF3-9894-40F4-B5A6-6EA364476E45}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjmedia_videodev", "pjmedia\build\pjmedia_videodev.v120.vcxproj", "{A1989FF3-9894-40F4-B5A6-6EA364476E45}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbaseclasses", "third_party\build\baseclasses\libbaseclasses.vs12.vcxproj", "{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libbaseclasses", "third_party\build\baseclasses\libbaseclasses.v120.vcxproj", "{E8A3F6FA-AE1C-4C8E-A0B6-9C8480324EAA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua2_lib", "pjsip\build\pjsua2_lib.vs12.vcxproj", "{B82CDD25-6903-430E-BD38-D8129A2015C1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pjsua2_lib", "pjsip\build\pjsua2_lib.v120.vcxproj", "{B82CDD25-6903-430E-BD38-D8129A2015C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
