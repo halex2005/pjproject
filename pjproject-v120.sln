@@ -1509,6 +1509,7 @@ Global
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Dynamic|Windows Mobile 6 Professional SDK (ARMV4I).ActiveCfg = Release-Dynamic|Win32
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Dynamic|Windows Mobile 6 Standard SDK (ARMV4I).ActiveCfg = Release-Dynamic|Win32
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Dynamic|x64.ActiveCfg = Release-Dynamic|x64
+		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Dynamic|x64.Build.0 = Release-Dynamic|x64
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Static|Pocket PC 2003 (ARMV4).ActiveCfg = Release-Static|Win32
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Static|Smartphone 2003 (ARMV4).ActiveCfg = Release-Static|Win32
 		{4281CA5E-1D48-45D4-A991-2718A454B4BA}.Release-Static|Win32.ActiveCfg = Release-Static|Win32
