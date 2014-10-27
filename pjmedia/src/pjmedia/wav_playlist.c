@@ -452,7 +452,7 @@ PJ_DEF(pj_status_t) pjmedia_wav_playlist_create(pj_pool_t *pool,
 	fport->start_data_list[index] = (unsigned)pos;
 	
 	/* Validate length. */
-	if (wavehdr.data_hdr.len != fport->fsize_list[index] - 
+	if (wavehdr.data_hdr.len > fport->fsize_list[index] - 
 				       fport->start_data_list[index]) 
 	{
 	    status = PJMEDIA_EWAVEUNSUPP;
