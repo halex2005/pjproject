@@ -24,6 +24,13 @@ Regression in VS2013:
     - Windows Mobile 5.0 Pocket PC SDK (ARMV4I)
     - Windows Mobile 5.0 Smartphone SDK (ARMV4I)
 
+CMake-based builds
+------------------
+
+You can use this repository as git submodule for your cmake-based builds.
+
+If your target has linked with `pjproject` target, you get all pjsip dependencies you need for your target.
+
 Licensing
 ---------
 
