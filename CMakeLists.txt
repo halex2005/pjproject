@@ -11,6 +11,9 @@ if (WIN32)
         add_definitions(-DPJ_WIN32=1)
     endif()
     add_definitions(-DWINVER=0x0501 -D_WIN32_WINNT=0x0501)
+elseif(UNIX)
+    #requires run ./configure before build
+    add_definitions(-DPJ_AUTOCONF=1)
 endif()
 
 include_directories(.)
@@ -114,56 +117,33 @@ add_subdirectory(third_party)
 #    pjlib/src/pj/ioqueue_common_abs.h
 #    pjlib/src/pj/pool_signature.h
 
-set(PJLIB_SOURCES
 #    pjlib/src/pj/compat/sigjmp.c
 #    pjlib/src/pj/compat/string.c
 #    pjlib/src/pj/compat/string_compat.c
-    pjlib/src/pj/activesock.c
 #    pjlib/src/pj/addr_resolv_linux_kernel.c
-    pjlib/src/pj/addr_resolv_sock.c
 #    pjlib/src/pj/addr_resolv_symbian.cpp
-    pjlib/src/pj/array.c
-    pjlib/src/pj/config.c
-    pjlib/src/pj/ctype.c
-    pjlib/src/pj/errno.c
-    pjlib/src/pj/except.c
 #    pjlib/src/pj/exception_symbian.cpp
 #    pjlib/src/pj/extra-exports.c
-    pjlib/src/pj/fifobuf.c
 #    pjlib/src/pj/file_access_unistd.c
-    pjlib/src/pj/file_access_win32.c
 #    pjlib/src/pj/file_io_ansi.c
-    pjlib/src/pj/file_io_win32.c
-    pjlib/src/pj/guid.c
 #    pjlib/src/pj/guid_simple.c
 #    pjlib/src/pj/guid_uuid.c
-    pjlib/src/pj/guid_win32.c
-    pjlib/src/pj/hash.c
 #    pjlib/src/pj/ioqueue_common_abs.c
 #    pjlib/src/pj/ioqueue_dummy.c
 #    pjlib/src/pj/ioqueue_epoll.c
 #    pjlib/src/pj/ioqueue_linux_kernel.c
-    pjlib/src/pj/ioqueue_select.c
 #    pjlib/src/pj/ioqueue_symbian.cpp
 #    pjlib/src/pj/ioqueue_winnt.c
 #    pjlib/src/pj/ip_helper_generic.c
 #    pjlib/src/pj/ip_helper_symbian.cpp
-    pjlib/src/pj/ip_helper_win32.c
-    pjlib/src/pj/list.c
-    pjlib/src/pj/lock.c
-    pjlib/src/pj/log.c
 #    pjlib/src/pj/log_writer_printk.c
-    pjlib/src/pj/log_writer_stdout.c
 #    pjlib/src/pj/log_writer_symbian_console.cpp
 #    pjlib/src/pj/os_core_linux_kernel.c
 #    pjlib/src/pj/os_core_symbian.cpp
 #    pjlib/src/pj/os_core_unix.c
-    pjlib/src/pj/os_core_win32.c
 #    pjlib/src/pj/os_error_linux_kernel.c
 #    pjlib/src/pj/os_error_symbian.cpp
 #    pjlib/src/pj/os_error_unix.c
-    pjlib/src/pj/os_error_win32.c
-    pjlib/src/pj/os_info.c
 #    pjlib/src/pj/os_info_symbian.cpp
 #    pjlib/src/pj/os_rwmutex.c
 #    pjlib/src/pj/os_symbian.h
@@ -171,56 +151,103 @@ set(PJLIB_SOURCES
 #    pjlib/src/pj/os_time_common.c
 #    pjlib/src/pj/os_time_linux_kernel.c
 #    pjlib/src/pj/os_time_unix.c
-    pjlib/src/pj/os_time_win32.c
-    pjlib/src/pj/os_timestamp_common.c
 #    pjlib/src/pj/os_timestamp_linux_kernel.c
 #    pjlib/src/pj/os_timestamp_posix.c
-    pjlib/src/pj/os_timestamp_win32.c
+#    pjlib/src/pj/pool_policy_kmalloc.c
+#    pjlib/src/pj/pool_policy_new.cpp
+#    pjlib/src/pj/sock_linux_kernel.c
+#    pjlib/src/pj/sock_qos_symbian.cpp
+#    pjlib/src/pj/sock_select_symbian.cpp
+#    pjlib/src/pj/sock_symbian.cpp
+#    pjlib/src/pj/ssl_sock_symbian.cpp
+#    pjlib/src/pj/symbols.c
+#    pjlib/src/pj/timer_symbian.cpp
+#    pjlib/src/pj/unicode_symbian.cpp
+
+set(PJLIB_SOURCES
+    pjlib/src/pj/activesock.c
+    pjlib/src/pj/addr_resolv_sock.c
+    pjlib/src/pj/array.c
+    pjlib/src/pj/config.c
+    pjlib/src/pj/ctype.c
+    pjlib/src/pj/errno.c
+    pjlib/src/pj/except.c
+    pjlib/src/pj/fifobuf.c
+    pjlib/src/pj/guid.c
+    pjlib/src/pj/hash.c
+    pjlib/src/pj/ioqueue_select.c
+    pjlib/src/pj/list.c
+    pjlib/src/pj/lock.c
+    pjlib/src/pj/log.c
+    pjlib/src/pj/log_writer_stdout.c
+    pjlib/src/pj/os_info.c
+    pjlib/src/pj/os_timestamp_common.c
     pjlib/src/pj/pool.c
     pjlib/src/pj/pool_buf.c
     pjlib/src/pj/pool_caching.c
     pjlib/src/pj/pool_dbg.c
-#    pjlib/src/pj/pool_policy_kmalloc.c
     pjlib/src/pj/pool_policy_malloc.c
-#    pjlib/src/pj/pool_policy_new.cpp
     pjlib/src/pj/rand.c
     pjlib/src/pj/rbtree.c
     pjlib/src/pj/sock_bsd.c
     pjlib/src/pj/sock_common.c
-#    pjlib/src/pj/sock_linux_kernel.c
     pjlib/src/pj/sock_qos_bsd.c
     pjlib/src/pj/sock_qos_common.c
-    pjlib/src/pj/sock_qos_dummy.c
-#    pjlib/src/pj/sock_qos_symbian.cpp
-    pjlib/src/pj/sock_qos_wm.c
     pjlib/src/pj/sock_select.c
-#    pjlib/src/pj/sock_select_symbian.cpp
-#    pjlib/src/pj/sock_symbian.cpp
     pjlib/src/pj/ssl_sock_common.c
     pjlib/src/pj/ssl_sock_dump.c
     pjlib/src/pj/ssl_sock_ossl.c
-#    pjlib/src/pj/ssl_sock_symbian.cpp
     pjlib/src/pj/string.c
-#    pjlib/src/pj/symbols.c
     pjlib/src/pj/timer.c
-#    pjlib/src/pj/timer_symbian.cpp
     pjlib/src/pj/types.c
-#    pjlib/src/pj/unicode_symbian.cpp
-    pjlib/src/pj/unicode_win32.c
 )
+if (WIN32)
+    LIST(APPEND PJLIB_SOURCES
+        pjlib/src/pj/file_access_win32.c
+        pjlib/src/pj/file_io_win32.c
+        pjlib/src/pj/guid_win32.c
+        pjlib/src/pj/ip_helper_win32.c
+        pjlib/src/pj/os_core_win32.c
+        pjlib/src/pj/os_error_win32.c
+        pjlib/src/pj/os_time_win32.c
+        pjlib/src/pj/os_timestamp_win32.c
+        pjlib/src/pj/unicode_win32.c
+        pjlib/src/pj/sock_qos_dummy.c
+        pjlib/src/pj/sock_qos_wm.c
+    )
+elseif(UNIX)
+    LIST(APPEND PJLIB_SOURCES
+        pjlib/src/pj/file_access_unistd.c
+        pjlib/src/pj/file_io_ansi.c
+        pjlib/src/pj/guid_simple.c
+        pjlib/src/pj/ip_helper_generic.c
+        pjlib/src/pj/os_core_unix.c
+        pjlib/src/pj/os_error_unix.c
+        pjlib/src/pj/os_time_common.c
+        pjlib/src/pj/os_time_unix.c
+        pjlib/src/pj/os_timestamp_posix.c
+    )
+endif()
 add_library(pjlib STATIC ${PJLIB_SOURCES})
 
-set (TEST_PJLIB_SOURCES
 #    pjlib/src/pjlib++-test/main.cpp
 #    pjlib/src/pjlib-samples/except.c
 #    pjlib/src/pjlib-samples/list.c
 #    pjlib/src/pjlib-samples/log.c
+#    pjlib/src/pjlib-test/exception_wrap.cpp
+#    pjlib/src/pjlib-test/main_mod.c
+#    pjlib/src/pjlib-test/main_rtems.c
+#    pjlib/src/pjlib-test/main_symbian.cpp
+#    pjlib/src/pjlib-test/main_win32.c
+#    pjlib/src/pjlib-test/pool_wrap.cpp
+#    pjlib/src/pjlib-test/test_wrap.cpp
+
+set (TEST_PJLIB_SOURCES
     pjlib/src/pjlib-test/activesock.c
     pjlib/src/pjlib-test/atomic.c
     pjlib/src/pjlib-test/echo_clt.c
     pjlib/src/pjlib-test/errno.c
     pjlib/src/pjlib-test/exception.c
-#    pjlib/src/pjlib-test/exception_wrap.cpp
     pjlib/src/pjlib-test/fifobuf.c
     pjlib/src/pjlib-test/file.c
     pjlib/src/pjlib-test/hash_test.c
@@ -230,15 +257,10 @@ set (TEST_PJLIB_SOURCES
     pjlib/src/pjlib-test/ioq_unreg.c
     pjlib/src/pjlib-test/list.c
     pjlib/src/pjlib-test/main.c
-#    pjlib/src/pjlib-test/main_mod.c
-#    pjlib/src/pjlib-test/main_rtems.c
-#    pjlib/src/pjlib-test/main_symbian.cpp
-#    pjlib/src/pjlib-test/main_win32.c
     pjlib/src/pjlib-test/mutex.c
     pjlib/src/pjlib-test/os.c
     pjlib/src/pjlib-test/pool.c
     pjlib/src/pjlib-test/pool_perf.c
-#    pjlib/src/pjlib-test/pool_wrap.cpp
     pjlib/src/pjlib-test/rand.c
     pjlib/src/pjlib-test/rbtree.c
     pjlib/src/pjlib-test/rtems_network_config.h
@@ -250,7 +272,6 @@ set (TEST_PJLIB_SOURCES
     pjlib/src/pjlib-test/string.c
     pjlib/src/pjlib-test/test.c
     pjlib/src/pjlib-test/test.h
-#    pjlib/src/pjlib-test/test_wrap.cpp
     pjlib/src/pjlib-test/thread.c
     pjlib/src/pjlib-test/timer.c
     pjlib/src/pjlib-test/timestamp.c
@@ -289,6 +310,10 @@ target_link_libraries(test-pjlib pjproject)
 #    pjlib-util/include/pjlib-util/types.h
 #    pjlib-util/include/pjlib-util/xml.h
 #    pjlib-util/include/pjlib-util.h
+#    pjlib-util/src/pjlib-util/resolver_wrap.cpp
+#    pjlib-util/src/pjlib-util/scanner_cis_bitwise.c
+#    pjlib-util/src/pjlib-util/scanner_cis_uint.c
+#    pjlib-util/src/pjlib-util/xml_wrap.cpp
 
 set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/base64.c
@@ -308,10 +333,7 @@ set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/md5.c
     pjlib-util/src/pjlib-util/pcap.c
     pjlib-util/src/pjlib-util/resolver.c
-#    pjlib-util/src/pjlib-util/resolver_wrap.cpp
     pjlib-util/src/pjlib-util/scanner.c
-#    pjlib-util/src/pjlib-util/scanner_cis_bitwise.c
-#    pjlib-util/src/pjlib-util/scanner_cis_uint.c
     pjlib-util/src/pjlib-util/sha1.c
     pjlib-util/src/pjlib-util/srv_resolver.c
     pjlib-util/src/pjlib-util/string.c
@@ -319,23 +341,28 @@ set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/stun_simple_client.c
     pjlib-util/src/pjlib-util/symbols.c
     pjlib-util/src/pjlib-util/xml.c
-#    pjlib-util/src/pjlib-util/xml_wrap.cpp
 )
 add_library(pjlib_util STATIC ${PJLIB_UTIL_SOURCES})
+
+#    pjlib-util/src/pjlib-util-test/main_rtems.c
+#    pjlib-util/src/pjlib-util-test/test.h
 
 set(TEST_PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util-test/encryption.c
     pjlib-util/src/pjlib-util-test/http_client.c
     pjlib-util/src/pjlib-util-test/json_test.c
     pjlib-util/src/pjlib-util-test/main.c
-    #pjlib-util/src/pjlib-util-test/main_rtems.c
-    pjlib-util/src/pjlib-util-test/main_win32.c
     pjlib-util/src/pjlib-util-test/resolver_test.c
     pjlib-util/src/pjlib-util-test/stun.c
     pjlib-util/src/pjlib-util-test/test.c
-    pjlib-util/src/pjlib-util-test/test.h
     pjlib-util/src/pjlib-util-test/xml.c
 )
+if (WIN32)
+    LIST(APPEND TEST_PJLIB_UTIL_SOURCES
+        pjlib-util/src/pjlib-util-test/main_win32.c
+    )
+elseif(UNIX)
+endif()
 add_executable(test-pjlib-util ${TEST_PJLIB_UTIL_SOURCES})
 target_link_libraries(test-pjlib-util pjproject)
 
@@ -435,6 +462,8 @@ target_link_libraries(test-pjlib-util pjproject)
 #    pjmedia/include/pjmedia_videodev.h
 #    pjmedia/src/pjmedia/echo_internal.h
 #    pjmedia/src/pjmedia/ffmpeg_util.h
+#    pjmedia/src/pjmedia/dummy.c
+#    pjmedia/src/pjmedia/sdp_wrap.cpp
 
 set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/alaw_ulaw.c
@@ -449,7 +478,6 @@ set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/converter_libswscale.c
     pjmedia/src/pjmedia/converter_libyuv.c
     pjmedia/src/pjmedia/delaybuf.c
-#    pjmedia/src/pjmedia/dummy.c
     pjmedia/src/pjmedia/echo_common.c
     pjmedia/src/pjmedia/echo_port.c
     pjmedia/src/pjmedia/echo_speex.c
@@ -477,8 +505,7 @@ set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/sdp.c
     pjmedia/src/pjmedia/sdp_cmp.c
     pjmedia/src/pjmedia/sdp_neg.c
-#    pjmedia/src/pjmedia/sdp_wrap.cpp
-#    pjmedia/src/pjmedia/session.c
+    pjmedia/src/pjmedia/session.c
     pjmedia/src/pjmedia/silencedet.c
     pjmedia/src/pjmedia/sound_legacy.c
     pjmedia/src/pjmedia/sound_port.c
@@ -508,42 +535,55 @@ set(PJMEDIA_SOURCES
 )
 add_library(pjmedia STATIC ${PJMEDIA_SOURCES})
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/portaudio/include)
+set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/srtp)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/srtp/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/srtp/crypto/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
 
-set (PJMEDIA_AUDIODEV_SOURCES
-#    pjmedia/src/pjmedia-audiodev/alsa_dev.c
-#    pjmedia/src/pjmedia-audiodev/android_jni_dev.c
-    pjmedia/src/pjmedia-audiodev/audiodev.c
-    pjmedia/src/pjmedia-audiodev/audiotest.c
-#    pjmedia/src/pjmedia-audiodev/bb10_dev.c
-    pjmedia/src/pjmedia-audiodev/bdimad_dev.c
-    pjmedia/src/pjmedia-audiodev/errno.c
-    pjmedia/src/pjmedia-audiodev/legacy_dev.c
-    pjmedia/src/pjmedia-audiodev/null_dev.c
-#    pjmedia/src/pjmedia-audiodev/opensl_dev.c
-    pjmedia/src/pjmedia-audiodev/pa_dev.c
 #    pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
 #    pjmedia/src/pjmedia-audiodev/symb_aps_dev.cpp
 #    pjmedia/src/pjmedia-audiodev/symb_mda_dev.cpp
 #    pjmedia/src/pjmedia-audiodev/symb_vas_dev.cpp
+
+set (PJMEDIA_AUDIODEV_SOURCES
+    pjmedia/src/pjmedia-audiodev/audiodev.c
+    pjmedia/src/pjmedia-audiodev/audiotest.c
+    pjmedia/src/pjmedia-audiodev/bdimad_dev.c
+    pjmedia/src/pjmedia-audiodev/errno.c
+    pjmedia/src/pjmedia-audiodev/legacy_dev.c
+    pjmedia/src/pjmedia-audiodev/null_dev.c
+    pjmedia/src/pjmedia-audiodev/pa_dev.c
     pjmedia/src/pjmedia-audiodev/wmme_dev.c
 )
+if (WIN32)
+    LIST(APPEND PJMEDIA_AUDIODEV_SOURCES
+    )
+elseif(UNIX)
+    LIST(APPEND PJMEDIA_AUDIODEV_SOURCES
+        pjmedia/src/pjmedia-audiodev/alsa_dev.c
+        pjmedia/src/pjmedia-audiodev/android_jni_dev.c
+        pjmedia/src/pjmedia-audiodev/bb10_dev.c
+        pjmedia/src/pjmedia-audiodev/opensl_dev.c
+    )
+endif()
 add_library(pjmedia_audiodev STATIC ${PJMEDIA_AUDIODEV_SOURCES})
+set_property(TARGET pjmedia_audiodev APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/portaudio/include)
+if(UNIX)
+    set_property(TARGET pjmedia_audiodev APPEND PROPERTY COMPILE_FLAGS -DPJMEDIA_AUDIO_DEV_HAS_WMME=0)
+endif()
 
 #    pjmedia/src/pjmedia-codec/g722/g722_dec.h
 #    pjmedia/src/pjmedia-codec/g722/g722_enc.h
 
 set (PJMEDIA_CODEC_SOURCES
-    pjmedia/src/pjmedia-codec/g722/g722_dec.c
-    pjmedia/src/pjmedia-codec/g722/g722_enc.c
     pjmedia/src/pjmedia-codec/amr_sdp_match.c
     pjmedia/src/pjmedia-codec/audio_codecs.c
     pjmedia/src/pjmedia-codec/ffmpeg_vid_codecs.c
     pjmedia/src/pjmedia-codec/g722.c
+    pjmedia/src/pjmedia-codec/g722/g722_dec.c
+    pjmedia/src/pjmedia-codec/g722/g722_enc.c
     pjmedia/src/pjmedia-codec/g7221.c
     pjmedia/src/pjmedia-codec/g7221_sdp_match.c
     pjmedia/src/pjmedia-codec/gsm.c
@@ -553,47 +593,60 @@ set (PJMEDIA_CODEC_SOURCES
     pjmedia/src/pjmedia-codec/ipp_codecs.c
     pjmedia/src/pjmedia-codec/l16.c
     pjmedia/src/pjmedia-codec/opencore_amr.c
-    pjmedia/src/pjmedia-codec/openh264.cpp
-    pjmedia/src/pjmedia-codec/passthrough.c
     pjmedia/src/pjmedia-codec/silk.c
     pjmedia/src/pjmedia-codec/speex_codec.c
 )
+if (WIN32)
+    LIST(APPEND PJMEDIA_CODEC_SOURCES
+        pjmedia/src/pjmedia-codec/openh264.cpp
+        pjmedia/src/pjmedia-codec/passthrough.c
+    )
+elseif(UNIX)
+endif()
 add_library(pjmedia_codec STATIC ${PJMEDIA_CODEC_SOURCES})
+set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
 
 set(PJMEDIA_VIDEODEV_SOURCES
     pjmedia/src/pjmedia-videodev/avi_dev.c
     pjmedia/src/pjmedia-videodev/colorbar_dev.c
-    pjmedia/src/pjmedia-videodev/dshow_dev.c
-    pjmedia/src/pjmedia-videodev/dshowclasses.cpp
     pjmedia/src/pjmedia-videodev/errno.c
     pjmedia/src/pjmedia-videodev/ffmpeg_dev.c
-#    pjmedia/src/pjmedia-videodev/opengl_dev.c
     pjmedia/src/pjmedia-videodev/sdl_dev.c
-#    pjmedia/src/pjmedia-videodev/v4l2_dev.c
     pjmedia/src/pjmedia-videodev/videodev.c
 )
+if (WIN32)
+    LIST(APPEND PJMEDIA_VIDEODEV_SOURCES
+        pjmedia/src/pjmedia-videodev/dshow_dev.c
+        pjmedia/src/pjmedia-videodev/dshowclasses.cpp
+    )
+elseif(UNIX)
+    LIST(APPEND PJMEDIA_VIDEODEV_SOURCES
+        pjmedia/src/pjmedia-videodev/opengl_dev.c
+        pjmedia/src/pjmedia-videodev/v4l2_dev.c
+    )
+endif()
 add_library(pjmedia_videodev STATIC ${PJMEDIA_VIDEODEV_SOURCES})
 
 #    pjmedia/src/test/test.h
+#    pjmedia/src/test/audio_tool.c
+#    pjmedia/src/test/sdptest.c
+#    pjmedia/src/test/session_test.c
+#    pjmedia/src/test/wince_main.c
+#    pjmedia/src/test/wsola_test.c
 
 set(TEST_PJMEDIA_SOURCES
-#    pjmedia/src/test/audio_tool.c
     pjmedia/src/test/codec_vectors.c
     pjmedia/src/test/jbuf_test.c
     pjmedia/src/test/main.c
     pjmedia/src/test/mips_test.c
     pjmedia/src/test/rtp_test.c
     pjmedia/src/test/sdp_neg_test.c
-#    pjmedia/src/test/sdptest.c
-#    pjmedia/src/test/session_test.c
     pjmedia/src/test/test.c
     pjmedia/src/test/vid_codec_test.c
     pjmedia/src/test/vid_dev_test.c
     pjmedia/src/test/vid_port_test.c
-#    pjmedia/src/test/wince_main.c
-#    pjmedia/src/test/wsola_test.c
 )
 add_executable(test-pjmedia ${TEST_PJMEDIA_SOURCES})
 target_link_libraries(test-pjmedia pjproject)
@@ -652,7 +705,6 @@ set(TEST_PJNATH_SOURCES
     pjnath/src/pjnath-test/concur_test.c
     pjnath/src/pjnath-test/ice_test.c
     pjnath/src/pjnath-test/main.c
-    pjnath/src/pjnath-test/main_win32.c
     pjnath/src/pjnath-test/server.c
     pjnath/src/pjnath-test/sess_auth.c
     pjnath/src/pjnath-test/stun.c
@@ -661,6 +713,12 @@ set(TEST_PJNATH_SOURCES
     pjnath/src/pjnath-test/turn_sock_test.c
 
 )
+if (WIN32)
+    LIST(APPEND TEST_PJNATH_SOURCES
+        pjnath/src/pjnath-test/main_win32.c
+    )
+elseif(UNIX)
+endif()
 add_executable(test-pjnath ${TEST_PJNATH_SOURCES})
 target_link_libraries(test-pjnath pjproject)
 
@@ -728,6 +786,14 @@ target_link_libraries(test-pjnath pjproject)
 #    pjsip/include/pjsip_ua.h
 #    pjsip/include/pjsua.h
 #    pjsip/include/pjsua2.hpp
+#    pjsip/src/pjsip/sip_auth_parser_wrap.cpp
+#    pjsip/src/pjsip/sip_endpoint_wrap.cpp
+#    pjsip/src/pjsip/sip_util_wrap.cpp
+#    pjsip/src/pjsip/sip_util_proxy_wrap.cpp
+#    pjsip/src/pjsip/sip_parser_wrap.cpp
+#    pjsip/src/pjsip/sip_tel_uri_wrap.cpp
+#    pjsip/src/pjsip/sip_transport_wrap.cpp
+#    pjsip/src/pjsip/sip_dialog_wrap.cpp
 
 set(PJSIP_CORE_SOURCES
     #Authentication
@@ -735,7 +801,6 @@ set(PJSIP_CORE_SOURCES
     pjsip/src/pjsip/sip_auth_client.c
     pjsip/src/pjsip/sip_auth_msg.c
     pjsip/src/pjsip/sip_auth_parser.c
-#    pjsip/src/pjsip/sip_auth_parser_wrap.cpp
     pjsip/src/pjsip/sip_auth_server.c
 
     #Base
@@ -744,19 +809,14 @@ set(PJSIP_CORE_SOURCES
     #Core
     pjsip/src/pjsip/sip_config.c
     pjsip/src/pjsip/sip_endpoint.c
-#    pjsip/src/pjsip/sip_endpoint_wrap.cpp
     pjsip/src/pjsip/sip_util.c
-#    pjsip/src/pjsip/sip_util_wrap.cpp
     pjsip/src/pjsip/sip_util_proxy.c
-#    pjsip/src/pjsip/sip_util_proxy_wrap.cpp
 
     #Messaging and parsing
     pjsip/src/pjsip/sip_msg.c
     pjsip/src/pjsip/sip_multipart.c
     pjsip/src/pjsip/sip_parser.c
-#    pjsip/src/pjsip/sip_parser_wrap.cpp
     pjsip/src/pjsip/sip_tel_uri.c
-#    pjsip/src/pjsip/sip_tel_uri_wrap.cpp
     pjsip/src/pjsip/sip_uri.c
 
     #Transaction layer
@@ -770,11 +830,9 @@ set(PJSIP_CORE_SOURCES
     pjsip/src/pjsip/sip_transport_tcp.c
     pjsip/src/pjsip/sip_transport_tls.c
     pjsip/src/pjsip/sip_transport_udp.c
-#    pjsip/src/pjsip/sip_transport_wrap.cpp
 
     #UA layer
     pjsip/src/pjsip/sip_dialog.c
-#    pjsip/src/pjsip/sip_dialog_wrap.cpp
     pjsip/src/pjsip/sip_ua_layer.c
 )
 add_library(pjsip_core STATIC ${PJSIP_CORE_SOURCES})
@@ -818,21 +876,20 @@ set(PJSUA_LIB_SOURCES
 add_library(pjsua_lib STATIC ${PJSUA_LIB_SOURCES})
 
 #    pjsip/src/pjsua2-test/main.cpp
+#    pjsip/src/test/main_rtems.c
+#    pjsip/src/test/test.h
 
 set (TEST_PJSIP_SOURCES
     pjsip/src/test/dlg_core_test.c
     pjsip/src/test/dns_test.c
     pjsip/src/test/inv_offer_answer_test.c
     pjsip/src/test/main.c
-#    pjsip/src/test/main_rtems.c
-    pjsip/src/test/main_win32.c
     pjsip/src/test/msg_err_test.c
     pjsip/src/test/msg_logger.c
     pjsip/src/test/msg_test.c
     pjsip/src/test/multipart_test.c
     pjsip/src/test/regc_test.c
     pjsip/src/test/test.c
-    pjsip/src/test/test.h
     pjsip/src/test/transport_loop_test.c
     pjsip/src/test/transport_tcp_test.c
     pjsip/src/test/transport_test.c
@@ -844,6 +901,12 @@ set (TEST_PJSIP_SOURCES
     pjsip/src/test/txdata_test.c
     pjsip/src/test/uri_test.c
 )
+if (WIN32)
+    LIST(APPEND TEST_PJSIP_SOURCES
+        pjsip/src/test/main_win32.c
+    )
+elseif(UNIX)
+endif()
 add_executable(test-pjsip ${TEST_PJSIP_SOURCES})
 target_link_libraries(test-pjsip pjproject)
 
@@ -946,25 +1009,43 @@ set (PJPROJECT_LIBRARIES
     pjsua_lib
     pjsua2_lib
     baseclasses
-    portaudio
     g7221codec
     gsmcodec
     ilbccodec
+    portaudio
     resample
     speex
     srtp
-    milenage
 )
-add_library(pjproject STATIC pjmedia/src/pjmedia/dummy.c)
-target_link_libraries(pjproject ${PJPROJECT_LIBRARIES})
 if (WIN32)
-    target_link_libraries(pjproject
+    LIST(APPEND PJPROJECT_LIBRARIES
+        milenage
         wsock32.lib
         ws2_32.lib
         ole32.lib
         dsound.lib
     )
+elseif(UNIX)
+    LIST(APPEND PJPROJECT_LIBRARIES
+        m
+        rt
+        pthread
+        asound
+        SDL2
+        avformat
+        avcodec
+        avutil
+        crypto
+        ssl
+        opencore-amrnb
+        opencore-amrwb
+        swscale
+        v4l2
+        vo-amrwbenc
+    )
 endif()
+add_library(pjproject STATIC pjmedia/src/pjmedia/dummy.c)
+target_link_libraries(pjproject ${PJPROJECT_LIBRARIES})
 
 #    pjsip-apps/src/pjsua/android/jni/pjsua_app_callback.h
 #    pjsip-apps/src/pjsua/bb10/src/applicationui.h
@@ -980,8 +1061,6 @@ endif()
 #    pjsip-apps/src/pjsua/pjsua_app.h
 #    pjsip-apps/src/pjsua/pjsua_app_common.h
 #    pjsip-apps/src/pjsua/pjsua_app_config.h
-
-set (PJSUA_SOURCES
 #    pjsip-apps/src/pjsua/android/jni/pjsua.i
 #    pjsip-apps/src/pjsua/android/jni/pjsua_app_callback.cpp
 #    pjsip-apps/src/pjsua/bb10/src/applicationui.cpp
@@ -992,8 +1071,10 @@ set (PJSUA_SOURCES
 #    pjsip-apps/src/pjsua/symbian/src/PjsuaContainerView.cpp
 #    pjsip-apps/src/pjsua/symbian/src/pjsuaDocument.cpp
 #    pjsip-apps/src/pjsua/wm/main_wm.c
-    pjsip-apps/src/pjsua/main.c
 #    pjsip-apps/src/pjsua/main_rtems.c
+
+set (PJSUA_SOURCES
+    pjsip-apps/src/pjsua/main.c
     pjsip-apps/src/pjsua/pjsua_app.c
     pjsip-apps/src/pjsua/pjsua_app_cli.c
     pjsip-apps/src/pjsua/pjsua_app_common.c

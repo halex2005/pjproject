@@ -84,8 +84,6 @@ set_property(TARGET baseclasses APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURR
 #    portaudio/src/os/unix/pa_unix_util.h
 #    portaudio/src/os/win/pa_win_wdmks_utils.h
 #    portaudio/src/os/win/pa_x86_plain_converters.h
-
-set(PORTAUDIO_SOURCES
 #    build/portaudio/src/pa_allocation.c
 #    build/portaudio/src/pa_converters.c
 #    build/portaudio/src/pa_cpuload.c
@@ -115,46 +113,72 @@ set(PORTAUDIO_SOURCES
 #    portaudio/pablio/test_rw_echo.c
 #    portaudio/pablio/test_w_saw.c
 #    portaudio/pablio/test_w_saw8.c
-    portaudio/src/common/pa_allocation.c
-    portaudio/src/common/pa_converters.c
-    portaudio/src/common/pa_cpuload.c
-    portaudio/src/common/pa_debugprint.c
-    portaudio/src/common/pa_dither.c
-    portaudio/src/common/pa_front.c
-    portaudio/src/common/pa_process.c
 #    portaudio/src/common/pa_ringbuffer.c
-    portaudio/src/common/pa_skeleton.c
-    portaudio/src/common/pa_stream.c
-#    portaudio/src/common/pa_trace.c
-#    portaudio/src/hostapi/alsa/pa_linux_alsa.c
-#    portaudio/src/hostapi/asihpi/pa_linux_asihpi.c
-#    portaudio/src/hostapi/asio/iasiothiscallresolver.cpp
-#    portaudio/src/hostapi/asio/pa_asio.cpp
 #    portaudio/src/hostapi/coreaudio/pa_mac_core.c
 #    portaudio/src/hostapi/coreaudio/pa_mac_core_blocking.c
 #    portaudio/src/hostapi/coreaudio/pa_mac_core_old.c
 #    portaudio/src/hostapi/coreaudio/pa_mac_core_utilities.c
-    portaudio/src/hostapi/dsound/pa_win_ds.c
-    portaudio/src/hostapi/dsound/pa_win_ds_dynlink.c
-#    portaudio/src/hostapi/jack/pa_jack.c
-#    portaudio/src/hostapi/oss/pa_unix_oss.c
-#    portaudio/src/hostapi/oss/recplay.c
+#    portaudio/src/os/win/pa_win_wdmks_utils.c
 #    portaudio/src/hostapi/wasapi/pa_win_wasapi.cpp
 #    portaudio/src/hostapi/wdmks/pa_win_wdmks.c
-    portaudio/src/hostapi/wmme/pa_win_wmme.c
-#    portaudio/src/os/unix/pa_unix_hostapis.c
-#    portaudio/src/os/unix/pa_unix_util.c
-    portaudio/src/os/win/pa_win_hostapis.c
-    portaudio/src/os/win/pa_win_util.c
-    portaudio/src/os/win/pa_win_waveformat.c
-#    portaudio/src/os/win/pa_win_wdmks_utils.c
-    portaudio/src/os/win/pa_x86_plain_converters.c
+
+set(PORTAUDIO_SOURCES
+#    portaudio/src/hostapi/asio/iasiothiscallresolver.cpp
+#    portaudio/src/hostapi/asio/pa_asio.cpp
+#    portaudio/src/hostapi/jack/pa_jack.c
+#    portaudio/src/hostapi/oss/recplay.c
 )
-add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
-set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/include)
-set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/common)
-set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/os/win)
-set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/$ENV{DXSDK_DIR}/include)
+if (WIN32)
+    LIST(APPEND PORTAUDIO_SOURCES
+        portaudio/src/common/pa_allocation.c
+        portaudio/src/common/pa_converters.c
+        portaudio/src/common/pa_cpuload.c
+        portaudio/src/common/pa_debugprint.c
+        portaudio/src/common/pa_dither.c
+        portaudio/src/common/pa_front.c
+        portaudio/src/common/pa_process.c
+        portaudio/src/common/pa_skeleton.c
+        portaudio/src/common/pa_stream.c
+        portaudio/src/common/pa_trace.c
+        portaudio/src/hostapi/dsound/pa_win_ds.c
+        portaudio/src/hostapi/dsound/pa_win_ds_dynlink.c
+        portaudio/src/hostapi/wmme/pa_win_wmme.c
+        portaudio/src/os/win/pa_win_hostapis.c
+        portaudio/src/os/win/pa_win_util.c
+        portaudio/src/os/win/pa_win_waveformat.c
+        portaudio/src/os/win/pa_x86_plain_converters.c
+    )
+    add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
+    set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/include)
+    set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/common)
+    set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/os/win)
+    set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/$ENV{DXSDK_DIR}/include)
+elseif(UNIX)
+    LIST(APPEND PORTAUDIO_SOURCES
+        build/portaudio/src/pa_allocation.c
+        build/portaudio/src/pa_converters.c
+        build/portaudio/src/pa_cpuload.c
+        build/portaudio/src/pa_debugprint.c
+        build/portaudio/src/pa_dither.c
+        build/portaudio/src/pa_front.c
+        build/portaudio/src/pa_linux_alsa.c
+        build/portaudio/src/pa_process.c
+        build/portaudio/src/pa_skeleton.c
+        build/portaudio/src/pa_stream.c
+        build/portaudio/src/pa_trace.c
+        build/portaudio/src/pa_unix_hostapis.c
+        build/portaudio/src/pa_unix_oss.c
+        build/portaudio/src/pa_unix_util.c
+    )
+    add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
+    set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/portaudio/src)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_SYS_SOUNDCARD_H)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_LINUX_SOUNDCARD_H)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS OPENSSL_NO_SSL2=1)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS PA_LITTLE_ENDIAN)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS PA_USE_ALSA=1)
+    set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS PA_USE_OSS=1)
+endif()
 
 #    g7221/common/basic_op.h
 #    g7221/common/basic_op_i.h
@@ -184,7 +208,6 @@ add_library(g7221codec STATIC ${G7221_SOURCES})
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR})
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/g7221/common)
 
-
 #    gsm/inc/config.h
 #    gsm/inc/gsm.h
 #    gsm/inc/private.h
@@ -192,7 +215,6 @@ set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRE
 #    gsm/inc/unproto.h
 #    gsm/inc/toast.h
 #    gsm/add-test/add_test.c
-
 #    gsm/src/toast.c
 #    gsm/src/toast_alaw.c
 #    gsm/src/toast_audio.c
@@ -213,7 +235,6 @@ set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRE
 set(GSM_SOURCES
     gsm/src/add.c
     gsm/src/code.c
-    gsm/src/debug.c
     gsm/src/decode.c
     gsm/src/gsm_create.c
     gsm/src/gsm_decode.c
@@ -222,7 +243,6 @@ set(GSM_SOURCES
     gsm/src/gsm_explode.c
     gsm/src/gsm_implode.c
     gsm/src/gsm_option.c
-    gsm/src/gsm_print.c
     gsm/src/long_term.c
     gsm/src/lpc.c
     gsm/src/preprocess.c
@@ -230,6 +250,13 @@ set(GSM_SOURCES
     gsm/src/short_term.c
     gsm/src/table.c
 )
+if (WIN32)
+    LIST(APPEND GSM_SOURCES
+        gsm/src/debug.c
+        gsm/src/gsm_print.c
+    )
+elseif(UNIX)
+endif()
 add_library(gsmcodec STATIC ${GSM_SOURCES})
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/gsm/inc)
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/gsm)
@@ -293,9 +320,9 @@ add_library(ilbccodec STATIC ${ILBC_SOURCES})
 #    resample/src/resample.h
 #    resample/src/smallfilter.h
 #    resample/src/stddefs.h
+#    resample/src/libresample_dll.c
 
 set (RESAMPLE_SOURCES
-#    resample/src/libresample_dll.c
     resample/src/resamplesubs.c
 )
 add_library(resample STATIC ${RESAMPLE_SOURCES})
@@ -370,10 +397,13 @@ set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT
 #    speex/libspeex/testenc_wb.c
 #    speex/libspeex/testjitter.c
 #    speex/libspeex/testresample.c
+#    speex/libspeex/buffer.c
+#    speex/libspeex/jitter.c
+#    speex/libspeex/scal.c
+#    speex/libspeex/vorbis_psy.c
 
 set (SPEEX_SOURCES
     speex/libspeex/bits.c
-#    speex/libspeex/buffer.c
     speex/libspeex/cb_search.c
     speex/libspeex/exc_5_64_table.c
     speex/libspeex/exc_5_256_table.c
@@ -389,7 +419,6 @@ set (SPEEX_SOURCES
     speex/libspeex/hexc_10_32_table.c
     speex/libspeex/hexc_table.c
     speex/libspeex/high_lsp_tables.c
-#    speex/libspeex/jitter.c
     speex/libspeex/kiss_fft.c
     speex/libspeex/kiss_fftr.c
     speex/libspeex/lpc.c
@@ -404,14 +433,12 @@ set (SPEEX_SOURCES
     speex/libspeex/quant_lsp.c
     speex/libspeex/resample.c
     speex/libspeex/sb_celp.c
-#    speex/libspeex/scal.c
     speex/libspeex/smallft.c
     speex/libspeex/speex.c
     speex/libspeex/speex_callbacks.c
     speex/libspeex/speex_header.c
     speex/libspeex/stereo.c
     speex/libspeex/vbr.c
-#    speex/libspeex/vorbis_psy.c
     speex/libspeex/vq.c
     speex/libspeex/window.c
 )
@@ -473,9 +500,12 @@ set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SO
 #    srtp/test/rtpw.c
 #    srtp/test/srtp_driver.c
 #    srtp/config_in.h
+#    srtp/crypto/kernel/err.c
+#    srtp/crypto/math/math.c
+#    srtp/crypto/rng/rand_linux_kernel.c
+#    srtp/tables/aes_tables.c
 
 set (SRTP_SOURCES
-    srtp/crypto/ae_xfm/xfm.c
     srtp/crypto/cipher/aes.c
     srtp/crypto/cipher/aes_cbc.c
     srtp/crypto/cipher/aes_icm.c
@@ -487,40 +517,50 @@ set (SRTP_SOURCES
     srtp/crypto/hash/sha1.c
     srtp/crypto/kernel/alloc.c
     srtp/crypto/kernel/crypto_kernel.c
-#    srtp/crypto/kernel/err.c
     srtp/crypto/kernel/key.c
     srtp/crypto/math/datatypes.c
-    srtp/crypto/math/gf2_8.c
-#    srtp/crypto/math/math.c
     srtp/crypto/math/stat.c
     srtp/crypto/replay/rdb.c
     srtp/crypto/replay/rdbx.c
-#    srtp/crypto/replay/ut_sim.c
     srtp/crypto/rng/ctr_prng.c
     srtp/crypto/rng/prng.c
-#    srtp/crypto/rng/rand_linux_kernel.c
     srtp/crypto/rng/rand_source.c
-    srtp/srtp/srtp.c
     srtp/pjlib/srtp_err.c
-#    srtp/tables/aes_tables.c
+    srtp/srtp/srtp.c
 )
+if (WIN32)
+    LIST(APPEND SRTP_SOURCES
+        srtp/crypto/ae_xfm/xfm.c
+        srtp/crypto/math/gf2_8.c
+    )
+elseif(UNIX)
+    LIST(APPEND SRTP_SOURCES
+        srtp/crypto/replay/ut_sim.c
+    )
+endif()
 add_library(srtp STATIC ${SRTP_SOURCES})
+set_property(TARGET srtp APPEND PROPERTY COMPILE_FLAGS -DHAVE_CONFIG_H)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/srtp)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/include)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/crypto/include)
 
-#    milenage/milenage.h
-#    milenage/rijndael.h
+if (WIN32)
 
-set (MILENAGE_SOURCES
-    milenage/milenage.c
-    milenage/rijndael.c
-)
-add_library(milenage STATIC ${MILENAGE_SOURCES})
+    #    milenage/milenage.h
+    #    milenage/rijndael.h
 
-set (MP3_SOURCES
-    mp3/BladeMP3EncDLL.h
-    mp3/mp3_port.h
-    mp3/mp3_writer.c
-)
-add_library(mp3 STATIC ${MP3_SOURCES})
+    set (MILENAGE_SOURCES
+        milenage/milenage.c
+        milenage/rijndael.c
+    )
+    add_library(milenage STATIC ${MILENAGE_SOURCES})
+
+    set (MP3_SOURCES
+        mp3/BladeMP3EncDLL.h
+        mp3/mp3_port.h
+        mp3/mp3_writer.c
+    )
+    add_library(mp3 STATIC ${MP3_SOURCES})
+
+endif()
+
