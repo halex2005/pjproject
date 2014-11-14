@@ -542,6 +542,7 @@ set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/srtp/crypto/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
 
+
 #    pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
 #    pjmedia/src/pjmedia-audiodev/symb_aps_dev.cpp
 #    pjmedia/src/pjmedia-audiodev/symb_mda_dev.cpp
@@ -650,6 +651,9 @@ set(TEST_PJMEDIA_SOURCES
 )
 add_executable(test-pjmedia ${TEST_PJMEDIA_SOURCES})
 target_link_libraries(test-pjmedia pjproject)
+add_custom_command(
+    TARGET test-pjmedia PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${CMAKE_CURRENT_SOURCE_DIR}/pjmedia/build/Jbtest.dat" "$<TARGET_FILE_DIR:test-pjmedia>/Jbtest.dat")
 
 #    pjnath/docs/doc_ice.h
 #    pjnath/docs/doc_mainpage.h
