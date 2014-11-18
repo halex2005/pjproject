@@ -60,62 +60,6 @@ add_subdirectory(third_party)
 #    pjlib/include/pj/compat/stdfileio.h
 #    pjlib/include/pj/compat/string.h
 #    pjlib/include/pj/compat/time.h
-#    pjlib/include/pj/activesock.h
-#    pjlib/include/pj/addr_resolv.h
-#    pjlib/include/pj/array.h
-#    pjlib/include/pj/assert.h
-#    pjlib/include/pj/config.h
-#    pjlib/include/pj/config_site.h
-#    pjlib/include/pj/config_site_sample.h
-#    pjlib/include/pj/ctype.h
-#    pjlib/include/pj/doxygen.h
-#    pjlib/include/pj/errno.h
-#    pjlib/include/pj/except.h
-#    pjlib/include/pj/fifobuf.h
-#    pjlib/include/pj/file_access.h
-#    pjlib/include/pj/file_io.h
-#    pjlib/include/pj/guid.h
-#    pjlib/include/pj/hash.h
-#    pjlib/include/pj/ioqueue.h
-#    pjlib/include/pj/ip_helper.h
-#    pjlib/include/pj/list.h
-#    pjlib/include/pj/list_i.h
-#    pjlib/include/pj/lock.h
-#    pjlib/include/pj/log.h
-#    pjlib/include/pj/math.h
-#    pjlib/include/pj/os.h
-#    pjlib/include/pj/pool.h
-#    pjlib/include/pj/pool_alt.h
-#    pjlib/include/pj/pool_buf.h
-#    pjlib/include/pj/pool_i.h
-#    pjlib/include/pj/rand.h
-#    pjlib/include/pj/rbtree.h
-#    pjlib/include/pj/sock.h
-#    pjlib/include/pj/sock_qos.h
-#    pjlib/include/pj/sock_select.h
-#    pjlib/include/pj/ssl_sock.h
-#    pjlib/include/pj/string.h
-#    pjlib/include/pj/string_i.h
-#    pjlib/include/pj/timer.h
-#    pjlib/include/pj/types.h
-#    pjlib/include/pj/unicode.h
-#    pjlib/include/pj++/file.hpp
-#    pjlib/include/pj++/hash.hpp
-#    pjlib/include/pj++/list.hpp
-#    pjlib/include/pj++/lock.hpp
-#    pjlib/include/pj++/os.hpp
-#    pjlib/include/pj++/pool.hpp
-#    pjlib/include/pj++/proactor.hpp
-#    pjlib/include/pj++/scanner.hpp
-#    pjlib/include/pj++/sock.hpp
-#    pjlib/include/pj++/string.hpp
-#    pjlib/include/pj++/timer.hpp
-#    pjlib/include/pj++/tree.hpp
-#    pjlib/include/pj++/types.hpp
-#    pjlib/include/pjlib++.hpp
-#    pjlib/include/pjlib.h
-#    pjlib/src/pj/ioqueue_common_abs.h
-#    pjlib/src/pj/pool_signature.h
 
 #    pjlib/src/pj/compat/sigjmp.c
 #    pjlib/src/pj/compat/string.c
@@ -164,6 +108,64 @@ add_subdirectory(third_party)
 #    pjlib/src/pj/timer_symbian.cpp
 #    pjlib/src/pj/unicode_symbian.cpp
 
+set(PJLIB_HEADERS
+    pjlib/include/pj/activesock.h
+    pjlib/include/pj/addr_resolv.h
+    pjlib/include/pj/array.h
+    pjlib/include/pj/assert.h
+    pjlib/include/pj/config.h
+    pjlib/include/pj/config_site.h
+    pjlib/include/pj/config_site_sample.h
+    pjlib/include/pj/ctype.h
+    pjlib/include/pj/doxygen.h
+    pjlib/include/pj/errno.h
+    pjlib/include/pj/except.h
+    pjlib/include/pj/fifobuf.h
+    pjlib/include/pj/file_access.h
+    pjlib/include/pj/file_io.h
+    pjlib/include/pj/guid.h
+    pjlib/include/pj/hash.h
+    pjlib/include/pj/ioqueue.h
+    pjlib/include/pj/ip_helper.h
+    pjlib/include/pj/list.h
+    pjlib/include/pj/list_i.h
+    pjlib/include/pj/lock.h
+    pjlib/include/pj/log.h
+    pjlib/include/pj/math.h
+    pjlib/include/pj/os.h
+    pjlib/include/pj/pool.h
+    pjlib/include/pj/pool_alt.h
+    pjlib/include/pj/pool_buf.h
+    pjlib/include/pj/pool_i.h
+    pjlib/include/pj/rand.h
+    pjlib/include/pj/rbtree.h
+    pjlib/include/pj/sock.h
+    pjlib/include/pj/sock_qos.h
+    pjlib/include/pj/sock_select.h
+    pjlib/include/pj/ssl_sock.h
+    pjlib/include/pj/string.h
+    pjlib/include/pj/string_i.h
+    pjlib/include/pj/timer.h
+    pjlib/include/pj/types.h
+    pjlib/include/pj/unicode.h
+    pjlib/include/pj++/file.hpp
+    pjlib/include/pj++/hash.hpp
+    pjlib/include/pj++/list.hpp
+    pjlib/include/pj++/lock.hpp
+    pjlib/include/pj++/os.hpp
+    pjlib/include/pj++/pool.hpp
+    pjlib/include/pj++/proactor.hpp
+    pjlib/include/pj++/scanner.hpp
+    pjlib/include/pj++/sock.hpp
+    pjlib/include/pj++/string.hpp
+    pjlib/include/pj++/timer.hpp
+    pjlib/include/pj++/tree.hpp
+    pjlib/include/pj++/types.hpp
+    pjlib/include/pjlib++.hpp
+    pjlib/include/pjlib.h
+    pjlib/src/pj/ioqueue_common_abs.h
+    pjlib/src/pj/pool_signature.h
+)
 set(PJLIB_SOURCES
     pjlib/src/pj/activesock.c
     pjlib/src/pj/addr_resolv_sock.c
@@ -228,7 +230,7 @@ elseif(UNIX)
         pjlib/src/pj/os_timestamp_posix.c
     )
 endif()
-add_library(pjlib STATIC ${PJLIB_SOURCES})
+add_library(pjlib STATIC ${PJLIB_SOURCES} ${PJLIB_HEADERS})
 
 #    pjlib/src/pjlib++-test/main.cpp
 #    pjlib/src/pjlib-samples/except.c
@@ -282,39 +284,41 @@ set (TEST_PJLIB_SOURCES
 add_executable(test-pjlib ${TEST_PJLIB_SOURCES})
 target_link_libraries(test-pjlib pjproject)
 
-#    pjlib-util/include/pjlib-util/base64.h
-#    pjlib-util/include/pjlib-util/cli.h
-#    pjlib-util/include/pjlib-util/cli_console.h
-#    pjlib-util/include/pjlib-util/cli_imp.h
-#    pjlib-util/include/pjlib-util/cli_telnet.h
-#    pjlib-util/include/pjlib-util/config.h
-#    pjlib-util/include/pjlib-util/crc32.h
-#    pjlib-util/include/pjlib-util/dns.h
-#    pjlib-util/include/pjlib-util/dns_server.h
-#    pjlib-util/include/pjlib-util/errno.h
-#    pjlib-util/include/pjlib-util/getopt.h
-#    pjlib-util/include/pjlib-util/hmac_md5.h
-#    pjlib-util/include/pjlib-util/hmac_sha1.h
-#    pjlib-util/include/pjlib-util/http_client.h
-#    pjlib-util/include/pjlib-util/json.h
-#    pjlib-util/include/pjlib-util/md5.h
-#    pjlib-util/include/pjlib-util/pcap.h
-#    pjlib-util/include/pjlib-util/resolver.h
-#    pjlib-util/include/pjlib-util/scanner.h
-#    pjlib-util/include/pjlib-util/scanner_cis_bitwise.h
-#    pjlib-util/include/pjlib-util/scanner_cis_uint.h
-#    pjlib-util/include/pjlib-util/sha1.h
-#    pjlib-util/include/pjlib-util/srv_resolver.h
-#    pjlib-util/include/pjlib-util/string.h
-#    pjlib-util/include/pjlib-util/stun_simple.h
-#    pjlib-util/include/pjlib-util/types.h
-#    pjlib-util/include/pjlib-util/xml.h
-#    pjlib-util/include/pjlib-util.h
 #    pjlib-util/src/pjlib-util/resolver_wrap.cpp
 #    pjlib-util/src/pjlib-util/scanner_cis_bitwise.c
 #    pjlib-util/src/pjlib-util/scanner_cis_uint.c
 #    pjlib-util/src/pjlib-util/xml_wrap.cpp
 
+set(PJLIB_UTIL_HEADERS
+    pjlib-util/include/pjlib-util/base64.h
+    pjlib-util/include/pjlib-util/cli.h
+    pjlib-util/include/pjlib-util/cli_console.h
+    pjlib-util/include/pjlib-util/cli_imp.h
+    pjlib-util/include/pjlib-util/cli_telnet.h
+    pjlib-util/include/pjlib-util/config.h
+    pjlib-util/include/pjlib-util/crc32.h
+    pjlib-util/include/pjlib-util/dns.h
+    pjlib-util/include/pjlib-util/dns_server.h
+    pjlib-util/include/pjlib-util/errno.h
+    pjlib-util/include/pjlib-util/getopt.h
+    pjlib-util/include/pjlib-util/hmac_md5.h
+    pjlib-util/include/pjlib-util/hmac_sha1.h
+    pjlib-util/include/pjlib-util/http_client.h
+    pjlib-util/include/pjlib-util/json.h
+    pjlib-util/include/pjlib-util/md5.h
+    pjlib-util/include/pjlib-util/pcap.h
+    pjlib-util/include/pjlib-util/resolver.h
+    pjlib-util/include/pjlib-util/scanner.h
+    pjlib-util/include/pjlib-util/scanner_cis_bitwise.h
+    pjlib-util/include/pjlib-util/scanner_cis_uint.h
+    pjlib-util/include/pjlib-util/sha1.h
+    pjlib-util/include/pjlib-util/srv_resolver.h
+    pjlib-util/include/pjlib-util/string.h
+    pjlib-util/include/pjlib-util/stun_simple.h
+    pjlib-util/include/pjlib-util/types.h
+    pjlib-util/include/pjlib-util/xml.h
+    pjlib-util/include/pjlib-util.h
+)
 set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/base64.c
     pjlib-util/src/pjlib-util/cli.c
@@ -342,7 +346,7 @@ set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/symbols.c
     pjlib-util/src/pjlib-util/xml.c
 )
-add_library(pjlib_util STATIC ${PJLIB_UTIL_SOURCES})
+add_library(pjlib_util STATIC ${PJLIB_UTIL_SOURCES} ${PJLIB_UTIL_HEADERS})
 
 #    pjlib-util/src/pjlib-util-test/main_rtems.c
 #    pjlib-util/src/pjlib-util-test/test.h
@@ -366,105 +370,107 @@ endif()
 add_executable(test-pjlib-util ${TEST_PJLIB_UTIL_SOURCES})
 target_link_libraries(test-pjlib-util pjproject)
 
-#    pjmedia/include/pjmedia/alaw_ulaw.h
-#    pjmedia/include/pjmedia/avi.h
-#    pjmedia/include/pjmedia/avi_stream.h
-#    pjmedia/include/pjmedia/bidirectional.h
-#    pjmedia/include/pjmedia/circbuf.h
-#    pjmedia/include/pjmedia/clock.h
-#    pjmedia/include/pjmedia/codec.h
-#    pjmedia/include/pjmedia/conference.h
-#    pjmedia/include/pjmedia/config.h
-#    pjmedia/include/pjmedia/converter.h
-#    pjmedia/include/pjmedia/delaybuf.h
-#    pjmedia/include/pjmedia/doxygen.h
-#    pjmedia/include/pjmedia/echo.h
-#    pjmedia/include/pjmedia/echo_port.h
-#    pjmedia/include/pjmedia/endpoint.h
-#    pjmedia/include/pjmedia/errno.h
-#    pjmedia/include/pjmedia/event.h
-#    pjmedia/include/pjmedia/format.h
-#    pjmedia/include/pjmedia/frame.h
-#    pjmedia/include/pjmedia/g711.h
-#    pjmedia/include/pjmedia/jbuf.h
-#    pjmedia/include/pjmedia/master_port.h
-#    pjmedia/include/pjmedia/mem_port.h
-#    pjmedia/include/pjmedia/null_port.h
-#    pjmedia/include/pjmedia/plc.h
-#    pjmedia/include/pjmedia/port.h
-#    pjmedia/include/pjmedia/resample.h
-#    pjmedia/include/pjmedia/rtcp.h
-#    pjmedia/include/pjmedia/rtcp_xr.h
-#    pjmedia/include/pjmedia/rtp.h
-#    pjmedia/include/pjmedia/sdp.h
-#    pjmedia/include/pjmedia/sdp_neg.h
-#    pjmedia/include/pjmedia/session.h
-#    pjmedia/include/pjmedia/signatures.h
-#    pjmedia/include/pjmedia/silencedet.h
-#    pjmedia/include/pjmedia/sound.h
-#    pjmedia/include/pjmedia/sound_port.h
-#    pjmedia/include/pjmedia/splitcomb.h
-#    pjmedia/include/pjmedia/stereo.h
-#    pjmedia/include/pjmedia/stream.h
-#    pjmedia/include/pjmedia/stream_common.h
-#    pjmedia/include/pjmedia/symbian_sound_aps.h
-#    pjmedia/include/pjmedia/tonegen.h
-#    pjmedia/include/pjmedia/transport.h
-#    pjmedia/include/pjmedia/transport_adapter_sample.h
-#    pjmedia/include/pjmedia/transport_ice.h
-#    pjmedia/include/pjmedia/transport_loop.h
-#    pjmedia/include/pjmedia/transport_srtp.h
-#    pjmedia/include/pjmedia/transport_udp.h
-#    pjmedia/include/pjmedia/types.h
-#    pjmedia/include/pjmedia/vid_codec.h
-#    pjmedia/include/pjmedia/vid_codec_util.h
-#    pjmedia/include/pjmedia/vid_port.h
-#    pjmedia/include/pjmedia/vid_stream.h
-#    pjmedia/include/pjmedia/vid_tee.h
-#    pjmedia/include/pjmedia/wav_playlist.h
-#    pjmedia/include/pjmedia/wav_port.h
-#    pjmedia/include/pjmedia/wave.h
-#    pjmedia/include/pjmedia/wsola.h
-#    pjmedia/include/pjmedia-audiodev/audiodev.h
-#    pjmedia/include/pjmedia-audiodev/audiodev_imp.h
-#    pjmedia/include/pjmedia-audiodev/audiotest.h
-#    pjmedia/include/pjmedia-audiodev/config.h
-#    pjmedia/include/pjmedia-audiodev/errno.h
-#    pjmedia/include/pjmedia-codec/amr_helper.h
-#    pjmedia/include/pjmedia-codec/amr_sdp_match.h
-#    pjmedia/include/pjmedia-codec/audio_codecs.h
-#    pjmedia/include/pjmedia-codec/config.h
-#    pjmedia/include/pjmedia-codec/ffmpeg_vid_codecs.h
-#    pjmedia/include/pjmedia-codec/g722.h
-#    pjmedia/include/pjmedia-codec/g7221.h
-#    pjmedia/include/pjmedia-codec/g7221_sdp_match.h
-#    pjmedia/include/pjmedia-codec/gsm.h
-#    pjmedia/include/pjmedia-codec/h263_packetizer.h
-#    pjmedia/include/pjmedia-codec/h264_packetizer.h
-#    pjmedia/include/pjmedia-codec/ilbc.h
-#    pjmedia/include/pjmedia-codec/ipp_codecs.h
-#    pjmedia/include/pjmedia-codec/l16.h
-#    pjmedia/include/pjmedia-codec/opencore_amr.h
-#    pjmedia/include/pjmedia-codec/openh264.h
-#    pjmedia/include/pjmedia-codec/passthrough.h
-#    pjmedia/include/pjmedia-codec/silk.h
-#    pjmedia/include/pjmedia-codec/speex.h
-#    pjmedia/include/pjmedia-codec/types.h
-#    pjmedia/include/pjmedia-videodev/avi_dev.h
-#    pjmedia/include/pjmedia-videodev/config.h
-#    pjmedia/include/pjmedia-videodev/errno.h
-#    pjmedia/include/pjmedia-videodev/opengl_dev.h
-#    pjmedia/include/pjmedia-videodev/videodev.h
-#    pjmedia/include/pjmedia-videodev/videodev_imp.h
-#    pjmedia/include/pjmedia-codec.h
-#    pjmedia/include/pjmedia.h
-#    pjmedia/include/pjmedia_audiodev.h
-#    pjmedia/include/pjmedia_videodev.h
 #    pjmedia/src/pjmedia/echo_internal.h
 #    pjmedia/src/pjmedia/ffmpeg_util.h
 #    pjmedia/src/pjmedia/dummy.c
 #    pjmedia/src/pjmedia/sdp_wrap.cpp
 
+set(PJMEDIA_HEADERS
+    pjmedia/include/pjmedia/alaw_ulaw.h
+    pjmedia/include/pjmedia/avi.h
+    pjmedia/include/pjmedia/avi_stream.h
+    pjmedia/include/pjmedia/bidirectional.h
+    pjmedia/include/pjmedia/circbuf.h
+    pjmedia/include/pjmedia/clock.h
+    pjmedia/include/pjmedia/codec.h
+    pjmedia/include/pjmedia/conference.h
+    pjmedia/include/pjmedia/config.h
+    pjmedia/include/pjmedia/converter.h
+    pjmedia/include/pjmedia/delaybuf.h
+    pjmedia/include/pjmedia/doxygen.h
+    pjmedia/include/pjmedia/echo.h
+    pjmedia/include/pjmedia/echo_port.h
+    pjmedia/include/pjmedia/endpoint.h
+    pjmedia/include/pjmedia/errno.h
+    pjmedia/include/pjmedia/event.h
+    pjmedia/include/pjmedia/format.h
+    pjmedia/include/pjmedia/frame.h
+    pjmedia/include/pjmedia/g711.h
+    pjmedia/include/pjmedia/jbuf.h
+    pjmedia/include/pjmedia/master_port.h
+    pjmedia/include/pjmedia/mem_port.h
+    pjmedia/include/pjmedia/null_port.h
+    pjmedia/include/pjmedia/plc.h
+    pjmedia/include/pjmedia/port.h
+    pjmedia/include/pjmedia/resample.h
+    pjmedia/include/pjmedia/rtcp.h
+    pjmedia/include/pjmedia/rtcp_xr.h
+    pjmedia/include/pjmedia/rtp.h
+    pjmedia/include/pjmedia/sdp.h
+    pjmedia/include/pjmedia/sdp_neg.h
+    pjmedia/include/pjmedia/session.h
+    pjmedia/include/pjmedia/signatures.h
+    pjmedia/include/pjmedia/silencedet.h
+    pjmedia/include/pjmedia/sound.h
+    pjmedia/include/pjmedia/sound_port.h
+    pjmedia/include/pjmedia/splitcomb.h
+    pjmedia/include/pjmedia/stereo.h
+    pjmedia/include/pjmedia/stream.h
+    pjmedia/include/pjmedia/stream_common.h
+    pjmedia/include/pjmedia/symbian_sound_aps.h
+    pjmedia/include/pjmedia/tonegen.h
+    pjmedia/include/pjmedia/transport.h
+    pjmedia/include/pjmedia/transport_adapter_sample.h
+    pjmedia/include/pjmedia/transport_ice.h
+    pjmedia/include/pjmedia/transport_loop.h
+    pjmedia/include/pjmedia/transport_srtp.h
+    pjmedia/include/pjmedia/transport_udp.h
+    pjmedia/include/pjmedia/types.h
+    pjmedia/include/pjmedia/vid_codec.h
+    pjmedia/include/pjmedia/vid_codec_util.h
+    pjmedia/include/pjmedia/vid_port.h
+    pjmedia/include/pjmedia/vid_stream.h
+    pjmedia/include/pjmedia/vid_tee.h
+    pjmedia/include/pjmedia/wav_playlist.h
+    pjmedia/include/pjmedia/wav_port.h
+    pjmedia/include/pjmedia/wave.h
+    pjmedia/include/pjmedia/wsola.h
+    pjmedia/include/pjmedia-audiodev/audiodev.h
+    pjmedia/include/pjmedia-audiodev/audiodev_imp.h
+    pjmedia/include/pjmedia-audiodev/audiotest.h
+    pjmedia/include/pjmedia-audiodev/config.h
+    pjmedia/include/pjmedia-audiodev/errno.h
+    pjmedia/include/pjmedia-codec/amr_helper.h
+    pjmedia/include/pjmedia-codec/amr_sdp_match.h
+    pjmedia/include/pjmedia-codec/audio_codecs.h
+    pjmedia/include/pjmedia-codec/config.h
+    pjmedia/include/pjmedia-codec/ffmpeg_vid_codecs.h
+    pjmedia/include/pjmedia-codec/g722.h
+    pjmedia/include/pjmedia-codec/g7221.h
+    pjmedia/include/pjmedia-codec/g7221_sdp_match.h
+    pjmedia/include/pjmedia-codec/gsm.h
+    pjmedia/include/pjmedia-codec/h263_packetizer.h
+    pjmedia/include/pjmedia-codec/h264_packetizer.h
+    pjmedia/include/pjmedia-codec/ilbc.h
+    pjmedia/include/pjmedia-codec/ipp_codecs.h
+    pjmedia/include/pjmedia-codec/l16.h
+    pjmedia/include/pjmedia-codec/opencore_amr.h
+    pjmedia/include/pjmedia-codec/openh264.h
+    pjmedia/include/pjmedia-codec/passthrough.h
+    pjmedia/include/pjmedia-codec/silk.h
+    pjmedia/include/pjmedia-codec/speex.h
+    pjmedia/include/pjmedia-codec/types.h
+    pjmedia/include/pjmedia-videodev/avi_dev.h
+    pjmedia/include/pjmedia-videodev/config.h
+    pjmedia/include/pjmedia-videodev/errno.h
+    pjmedia/include/pjmedia-videodev/opengl_dev.h
+    pjmedia/include/pjmedia-videodev/videodev.h
+    pjmedia/include/pjmedia-videodev/videodev_imp.h
+    pjmedia/include/pjmedia-codec.h
+    pjmedia/include/pjmedia.h
+    pjmedia/include/pjmedia_audiodev.h
+    pjmedia/include/pjmedia_videodev.h
+)
 set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/alaw_ulaw.c
     pjmedia/src/pjmedia/alaw_ulaw_table.c
@@ -533,15 +539,16 @@ set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/wave.c
     pjmedia/src/pjmedia/wsola.c
 )
-add_library(pjmedia STATIC ${PJMEDIA_SOURCES})
+add_library(pjmedia STATIC ${PJMEDIA_SOURCES} ${PJMEDIA_HEADERS})
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/portaudio/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/srtp)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/srtp/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/srtp/crypto/include)
-set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
-
+if (NOT "$ENV{DXSDK_DIR}" STREQUAL "")
+    set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
+endif()
 
 #    pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
 #    pjmedia/src/pjmedia-audiodev/symb_aps_dev.cpp
@@ -575,9 +582,12 @@ if(UNIX)
     set_property(TARGET pjmedia_audiodev APPEND PROPERTY COMPILE_FLAGS -DPJMEDIA_AUDIO_DEV_HAS_WMME=0)
 endif()
 
-#    pjmedia/src/pjmedia-codec/g722/g722_dec.h
-#    pjmedia/src/pjmedia-codec/g722/g722_enc.h
 
+
+set (PJMEDIA_CODEC_HEADERS
+    pjmedia/src/pjmedia-codec/g722/g722_dec.h
+    pjmedia/src/pjmedia-codec/g722/g722_enc.h
+)
 set (PJMEDIA_CODEC_SOURCES
     pjmedia/src/pjmedia-codec/amr_sdp_match.c
     pjmedia/src/pjmedia-codec/audio_codecs.c
@@ -604,7 +614,7 @@ if (WIN32)
     )
 elseif(UNIX)
 endif()
-add_library(pjmedia_codec STATIC ${PJMEDIA_CODEC_SOURCES})
+add_library(pjmedia_codec STATIC ${PJMEDIA_CODEC_SOURCES} ${PJMEDIA_CODEC_HEADERS})
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
@@ -661,22 +671,24 @@ add_custom_command(
 #    pjnath/docs/doc_samples.h
 #    pjnath/docs/doc_stun.h
 #    pjnath/docs/doc_turn.h
-#    pjnath/include/pjnath/config.h
-#    pjnath/include/pjnath/errno.h
-#    pjnath/include/pjnath/ice_session.h
-#    pjnath/include/pjnath/ice_strans.h
-#    pjnath/include/pjnath/nat_detect.h
-#    pjnath/include/pjnath/stun_auth.h
-#    pjnath/include/pjnath/stun_config.h
-#    pjnath/include/pjnath/stun_msg.h
-#    pjnath/include/pjnath/stun_session.h
-#    pjnath/include/pjnath/stun_sock.h
-#    pjnath/include/pjnath/stun_transaction.h
-#    pjnath/include/pjnath/turn_session.h
-#    pjnath/include/pjnath/turn_sock.h
-#    pjnath/include/pjnath/types.h
-#    pjnath/include/pjnath.h
 
+set (PJNATH_HEADERS
+    pjnath/include/pjnath/config.h
+    pjnath/include/pjnath/errno.h
+    pjnath/include/pjnath/ice_session.h
+    pjnath/include/pjnath/ice_strans.h
+    pjnath/include/pjnath/nat_detect.h
+    pjnath/include/pjnath/stun_auth.h
+    pjnath/include/pjnath/stun_config.h
+    pjnath/include/pjnath/stun_msg.h
+    pjnath/include/pjnath/stun_session.h
+    pjnath/include/pjnath/stun_sock.h
+    pjnath/include/pjnath/stun_transaction.h
+    pjnath/include/pjnath/turn_session.h
+    pjnath/include/pjnath/turn_sock.h
+    pjnath/include/pjnath/types.h
+    pjnath/include/pjnath.h
+)
 set(PJNATH_SOURCES
     pjnath/src/pjnath/errno.c
     pjnath/src/pjnath/ice_session.c
@@ -691,7 +703,7 @@ set(PJNATH_SOURCES
     pjnath/src/pjnath/turn_session.c
     pjnath/src/pjnath/turn_sock.c
 )
-add_library(pjnath STATIC ${PJNATH_SOURCES})
+add_library(pjnath STATIC ${PJNATH_SOURCES} ${PJNATH_HEADERS})
 
 #    pjnath/src/pjnath-test/server.h
 #    pjnath/src/pjnath-test/test.h
@@ -727,69 +739,6 @@ add_executable(test-pjnath ${TEST_PJNATH_SOURCES})
 target_link_libraries(test-pjnath pjproject)
 
 #    pjsip/docs/doxygen.h
-#    pjsip/include/pjsip/print_util.h
-#    pjsip/include/pjsip/sip_auth.h
-#    pjsip/include/pjsip/sip_auth_aka.h
-#    pjsip/include/pjsip/sip_auth_msg.h
-#    pjsip/include/pjsip/sip_auth_parser.h
-#    pjsip/include/pjsip/sip_config.h
-#    pjsip/include/pjsip/sip_dialog.h
-#    pjsip/include/pjsip/sip_endpoint.h
-#    pjsip/include/pjsip/sip_errno.h
-#    pjsip/include/pjsip/sip_event.h
-#    pjsip/include/pjsip/sip_module.h
-#    pjsip/include/pjsip/sip_msg.h
-#    pjsip/include/pjsip/sip_multipart.h
-#    pjsip/include/pjsip/sip_parser.h
-#    pjsip/include/pjsip/sip_private.h
-#    pjsip/include/pjsip/sip_resolve.h
-#    pjsip/include/pjsip/sip_tel_uri.h
-#    pjsip/include/pjsip/sip_transaction.h
-#    pjsip/include/pjsip/sip_transport.h
-#    pjsip/include/pjsip/sip_transport_loop.h
-#    pjsip/include/pjsip/sip_transport_tcp.h
-#    pjsip/include/pjsip/sip_transport_tls.h
-#    pjsip/include/pjsip/sip_transport_udp.h
-#    pjsip/include/pjsip/sip_types.h
-#    pjsip/include/pjsip/sip_ua_layer.h
-#    pjsip/include/pjsip/sip_uri.h
-#    pjsip/include/pjsip/sip_util.h
-#    pjsip/include/pjsip-simple/errno.h
-#    pjsip/include/pjsip-simple/evsub.h
-#    pjsip/include/pjsip-simple/evsub_msg.h
-#    pjsip/include/pjsip-simple/iscomposing.h
-#    pjsip/include/pjsip-simple/mwi.h
-#    pjsip/include/pjsip-simple/pidf.h
-#    pjsip/include/pjsip-simple/presence.h
-#    pjsip/include/pjsip-simple/publish.h
-#    pjsip/include/pjsip-simple/rpid.h
-#    pjsip/include/pjsip-simple/types.h
-#    pjsip/include/pjsip-simple/xpidf.h
-#    pjsip/include/pjsip-ua/sip_100rel.h
-#    pjsip/include/pjsip-ua/sip_inv.h
-#    pjsip/include/pjsip-ua/sip_regc.h
-#    pjsip/include/pjsip-ua/sip_replaces.h
-#    pjsip/include/pjsip-ua/sip_timer.h
-#    pjsip/include/pjsip-ua/sip_xfer.h
-#    pjsip/include/pjsua-lib/pjsua.h
-#    pjsip/include/pjsua-lib/pjsua_internal.h
-#    pjsip/include/pjsua2/account.hpp
-#    pjsip/include/pjsua2/call.hpp
-#    pjsip/include/pjsua2/config.hpp
-#    pjsip/include/pjsua2/doxygen.hpp
-#    pjsip/include/pjsua2/endpoint.hpp
-#    pjsip/include/pjsua2/json.hpp
-#    pjsip/include/pjsua2/media.hpp
-#    pjsip/include/pjsua2/persistent.hpp
-#    pjsip/include/pjsua2/presence.hpp
-#    pjsip/include/pjsua2/siptypes.hpp
-#    pjsip/include/pjsua2/types.hpp
-#    pjsip/include/pjsip.h
-#    pjsip/include/pjsip_auth.h
-#    pjsip/include/pjsip_simple.h
-#    pjsip/include/pjsip_ua.h
-#    pjsip/include/pjsua.h
-#    pjsip/include/pjsua2.hpp
 #    pjsip/src/pjsip/sip_auth_parser_wrap.cpp
 #    pjsip/src/pjsip/sip_endpoint_wrap.cpp
 #    pjsip/src/pjsip/sip_util_wrap.cpp
@@ -799,6 +748,37 @@ target_link_libraries(test-pjnath pjproject)
 #    pjsip/src/pjsip/sip_transport_wrap.cpp
 #    pjsip/src/pjsip/sip_dialog_wrap.cpp
 
+set(PJSIP_CORE_HEADERS
+    pjsip/include/pjsip_auth.h
+    pjsip/include/pjsip.h
+    pjsip/include/pjsip/print_util.h
+    pjsip/include/pjsip/sip_auth.h
+    pjsip/include/pjsip/sip_auth_aka.h
+    pjsip/include/pjsip/sip_auth_msg.h
+    pjsip/include/pjsip/sip_auth_parser.h
+    pjsip/include/pjsip/sip_config.h
+    pjsip/include/pjsip/sip_dialog.h
+    pjsip/include/pjsip/sip_endpoint.h
+    pjsip/include/pjsip/sip_errno.h
+    pjsip/include/pjsip/sip_event.h
+    pjsip/include/pjsip/sip_module.h
+    pjsip/include/pjsip/sip_msg.h
+    pjsip/include/pjsip/sip_multipart.h
+    pjsip/include/pjsip/sip_parser.h
+    pjsip/include/pjsip/sip_private.h
+    pjsip/include/pjsip/sip_resolve.h
+    pjsip/include/pjsip/sip_tel_uri.h
+    pjsip/include/pjsip/sip_transaction.h
+    pjsip/include/pjsip/sip_transport.h
+    pjsip/include/pjsip/sip_transport_loop.h
+    pjsip/include/pjsip/sip_transport_tcp.h
+    pjsip/include/pjsip/sip_transport_tls.h
+    pjsip/include/pjsip/sip_transport_udp.h
+    pjsip/include/pjsip/sip_types.h
+    pjsip/include/pjsip/sip_ua_layer.h
+    pjsip/include/pjsip/sip_uri.h
+    pjsip/include/pjsip/sip_util.h
+)
 set(PJSIP_CORE_SOURCES
     #Authentication
     pjsip/src/pjsip/sip_auth_aka.c
@@ -839,8 +819,22 @@ set(PJSIP_CORE_SOURCES
     pjsip/src/pjsip/sip_dialog.c
     pjsip/src/pjsip/sip_ua_layer.c
 )
-add_library(pjsip_core STATIC ${PJSIP_CORE_SOURCES})
+add_library(pjsip_core STATIC ${PJSIP_CORE_SOURCES} ${PJSIP_CORE_HEADERS})
 
+set(PJSIP_SIMPLE_HEADERS
+    pjsip/include/pjsip_simple.h
+    pjsip/include/pjsip-simple/errno.h
+    pjsip/include/pjsip-simple/evsub.h
+    pjsip/include/pjsip-simple/evsub_msg.h
+    pjsip/include/pjsip-simple/iscomposing.h
+    pjsip/include/pjsip-simple/mwi.h
+    pjsip/include/pjsip-simple/pidf.h
+    pjsip/include/pjsip-simple/presence.h
+    pjsip/include/pjsip-simple/publish.h
+    pjsip/include/pjsip-simple/rpid.h
+    pjsip/include/pjsip-simple/types.h
+    pjsip/include/pjsip-simple/xpidf.h
+)
 set(PJSIP_SIMPLE_SOURCES
     pjsip/src/pjsip-simple/errno.c
     pjsip/src/pjsip-simple/evsub.c
@@ -854,8 +848,17 @@ set(PJSIP_SIMPLE_SOURCES
     pjsip/src/pjsip-simple/rpid.c
     pjsip/src/pjsip-simple/xpidf.c
 )
-add_library(pjsip_simple STATIC ${PJSIP_SIMPLE_SOURCES})
+add_library(pjsip_simple STATIC ${PJSIP_SIMPLE_SOURCES} ${PJSIP_SIMPLE_HEADERS})
 
+set(PJSIP_UA_HEADERS
+    pjsip/include/pjsip_ua.h
+    pjsip/include/pjsip-ua/sip_100rel.h
+    pjsip/include/pjsip-ua/sip_inv.h
+    pjsip/include/pjsip-ua/sip_regc.h
+    pjsip/include/pjsip-ua/sip_replaces.h
+    pjsip/include/pjsip-ua/sip_timer.h
+    pjsip/include/pjsip-ua/sip_xfer.h
+)
 set(PJSIP_UA_SOURCES
     pjsip/src/pjsip-ua/sip_100rel.c
     pjsip/src/pjsip-ua/sip_inv.c
@@ -864,8 +867,13 @@ set(PJSIP_UA_SOURCES
     pjsip/src/pjsip-ua/sip_timer.c
     pjsip/src/pjsip-ua/sip_xfer.c
 )
-add_library(pjsip_ua STATIC ${PJSIP_UA_SOURCES})
+add_library(pjsip_ua STATIC ${PJSIP_UA_SOURCES} ${PJSIP_UA_HEADERS})
 
+set(PJSUA_LIB_HEADERS
+    pjsip/include/pjsua.h
+    pjsip/include/pjsua-lib/pjsua.h
+    pjsip/include/pjsua-lib/pjsua_internal.h
+)
 set(PJSUA_LIB_SOURCES
     pjsip/src/pjsua-lib/pjsua_acc.c
     pjsip/src/pjsua-lib/pjsua_aud.c
@@ -877,7 +885,7 @@ set(PJSUA_LIB_SOURCES
     pjsip/src/pjsua-lib/pjsua_pres.c
     pjsip/src/pjsua-lib/pjsua_vid.c
 )
-add_library(pjsua_lib STATIC ${PJSUA_LIB_SOURCES})
+add_library(pjsua_lib STATIC ${PJSUA_LIB_SOURCES} ${PJSUA_LIB_HEADERS})
 
 #    pjsip/src/pjsua2-test/main.cpp
 #    pjsip/src/test/main_rtems.c
@@ -914,6 +922,20 @@ endif()
 add_executable(test-pjsip ${TEST_PJSIP_SOURCES})
 target_link_libraries(test-pjsip pjproject)
 
+set (PJSUA2_LIB_HEADERS
+    pjsip/include/pjsua2/account.hpp
+    pjsip/include/pjsua2/call.hpp
+    pjsip/include/pjsua2/config.hpp
+    pjsip/include/pjsua2/doxygen.hpp
+    pjsip/include/pjsua2/endpoint.hpp
+    pjsip/include/pjsua2/json.hpp
+    pjsip/include/pjsua2/media.hpp
+    pjsip/include/pjsua2/persistent.hpp
+    pjsip/include/pjsua2/presence.hpp
+    pjsip/include/pjsua2/siptypes.hpp
+    pjsip/include/pjsua2/types.hpp
+    pjsip/include/pjsua2.hpp
+)
 set (PJSUA2_LIB_SOURCES
     pjsip/src/pjsua2/account.cpp
     pjsip/src/pjsua2/call.cpp
@@ -926,8 +948,7 @@ set (PJSUA2_LIB_SOURCES
     pjsip/src/pjsua2/types.cpp
     pjsip/src/pjsua2/util.hpp
 )
-add_library(pjsua2_lib STATIC ${PJSUA2_LIB_SOURCES})
-
+add_library(pjsua2_lib STATIC ${PJSUA2_LIB_SOURCES} ${PJSUA2_LIB_HEADERS})
 
 set(SOURCE_FILES
     pjsip-apps/build/dummy.c
