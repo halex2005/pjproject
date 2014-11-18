@@ -32,4 +32,25 @@
 // Maximum simultaneous calls.
 #define PJSUA_MAX_CALLS (PJSIP_MAX_DIALOG_COUNT)
 
+/**
+ * The maximum file players.
+ */
+#define PJSUA_MAX_PLAYERS           (PJSUA_MAX_CALLS)
+
+/**
+ * The maximum file recorders.
+ */
+#define PJSUA_MAX_RECORDERS         (PJSUA_MAX_CALLS)
+
+/**
+ *
+*/
+#define PJSUA_MAX_MONITORS          (PJSUA_MAX_CALLS)
+
+/**
+ * Max ports in the conference bridge. This setting is the default value
+ * for pjsua_media_config.max_media_ports.
+ */
+#define PJSUA_MAX_CONF_PORTS        (2*PJSUA_MAX_CALLS + PJSUA_MAX_PLAYERS + PJSUA_MAX_RECORDERS + PJSUA_MAX_MONITORS)
+
 #include "config_site_sample.h"
