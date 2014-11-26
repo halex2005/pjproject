@@ -162,7 +162,7 @@ PJ_DEF(pj_status_t) pjmedia_codec_g711_init(pjmedia_endpt *endpt)
 	return PJ_ENOMEM;
 
     /* Create mutex. */
-    status = pj_mutex_create_simple(g711_factory.pool, "g611", 
+    status = pj_mutex_create_simple(g711_factory.pool, "g711", 
 				    &g711_factory.mutex);
     if (status != PJ_SUCCESS)
 	goto on_error;

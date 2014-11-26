@@ -577,7 +577,7 @@ PJ_DEF(void) pjsip_endpt_destroy(pjsip_endpoint *endpt)
     pjsip_module *mod;
     exit_cb *ecb;
 
-    PJ_LOG(5, (THIS_FILE, "Destroying endpoing instance.."));
+    PJ_LOG(5, (THIS_FILE, "Destroying endpoint instance..."));
 
     /* Phase 1: stop all modules */
     mod = endpt->module_list.prev;
