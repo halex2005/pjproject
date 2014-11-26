@@ -209,7 +209,7 @@ set(PJLIB_SOURCES
     pjlib/src/pj/types.c
 )
 if (WIN32)
-    LIST(APPEND PJLIB_SOURCES
+    list(APPEND PJLIB_SOURCES
         pjlib/src/pj/file_access_win32.c
         pjlib/src/pj/file_io_win32.c
         pjlib/src/pj/guid_win32.c
@@ -223,7 +223,7 @@ if (WIN32)
         pjlib/src/pj/sock_qos_wm.c
     )
 elseif(UNIX)
-    LIST(APPEND PJLIB_SOURCES
+    list(APPEND PJLIB_SOURCES
         pjlib/src/pj/file_access_unistd.c
         pjlib/src/pj/file_io_ansi.c
         pjlib/src/pj/guid_simple.c
@@ -369,7 +369,7 @@ set(TEST_PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util-test/xml.c
 )
 if (WIN32)
-    LIST(APPEND TEST_PJLIB_UTIL_SOURCES
+    list(APPEND TEST_PJLIB_UTIL_SOURCES
         pjlib-util/src/pjlib-util-test/main_win32.c
     )
 elseif(UNIX)
@@ -575,10 +575,10 @@ set (PJMEDIA_AUDIODEV_SOURCES
     pjmedia/src/pjmedia-audiodev/wmme_dev.c
 )
 if (WIN32)
-    LIST(APPEND PJMEDIA_AUDIODEV_SOURCES
+    list(APPEND PJMEDIA_AUDIODEV_SOURCES
     )
 elseif(UNIX)
-    LIST(APPEND PJMEDIA_AUDIODEV_SOURCES
+    list(APPEND PJMEDIA_AUDIODEV_SOURCES
         pjmedia/src/pjmedia-audiodev/alsa_dev.c
         pjmedia/src/pjmedia-audiodev/android_jni_dev.c
         pjmedia/src/pjmedia-audiodev/bb10_dev.c
@@ -617,7 +617,7 @@ set (PJMEDIA_CODEC_SOURCES
     pjmedia/src/pjmedia-codec/speex_codec.c
 )
 if (WIN32)
-    LIST(APPEND PJMEDIA_CODEC_SOURCES
+    list(APPEND PJMEDIA_CODEC_SOURCES
         pjmedia/src/pjmedia-codec/openh264.cpp
         pjmedia/src/pjmedia-codec/passthrough.c
     )
@@ -638,12 +638,12 @@ set(PJMEDIA_VIDEODEV_SOURCES
     pjmedia/src/pjmedia-videodev/videodev.c
 )
 if (WIN32)
-    LIST(APPEND PJMEDIA_VIDEODEV_SOURCES
+    list(APPEND PJMEDIA_VIDEODEV_SOURCES
         pjmedia/src/pjmedia-videodev/dshow_dev.c
         pjmedia/src/pjmedia-videodev/dshowclasses.cpp
     )
 elseif(UNIX)
-    LIST(APPEND PJMEDIA_VIDEODEV_SOURCES
+    list(APPEND PJMEDIA_VIDEODEV_SOURCES
         pjmedia/src/pjmedia-videodev/opengl_dev.c
         pjmedia/src/pjmedia-videodev/v4l2_dev.c
     )
@@ -743,7 +743,7 @@ set(TEST_PJNATH_SOURCES
 
 )
 if (WIN32)
-    LIST(APPEND TEST_PJNATH_SOURCES
+    list(APPEND TEST_PJNATH_SOURCES
         pjnath/src/pjnath-test/main_win32.c
     )
 elseif(UNIX)
@@ -931,7 +931,7 @@ set (TEST_PJSIP_SOURCES
     pjsip/src/test/uri_test.c
 )
 if (WIN32)
-    LIST(APPEND TEST_PJSIP_SOURCES
+    list(APPEND TEST_PJSIP_SOURCES
         pjsip/src/test/main_win32.c
     )
 elseif(UNIX)
@@ -1061,7 +1061,7 @@ set (PJPROJECT_LIBRARIES
     srtp
 )
 if (WIN32)
-    LIST(APPEND PJPROJECT_PLATFORM_LIBRARIES
+    list(APPEND PJPROJECT_PLATFORM_LIBRARIES
         milenage
         wsock32.lib
         ws2_32.lib
@@ -1069,7 +1069,7 @@ if (WIN32)
         dsound.lib
     )
 elseif(UNIX)
-    LIST(APPEND PJPROJECT_PLATFORM_LIBRARIES
+    list(APPEND PJPROJECT_PLATFORM_LIBRARIES
         m
         rt
         pthread
@@ -1090,6 +1090,16 @@ endif()
 add_library(pjproject STATIC pjmedia/src/pjmedia/dummy.c)
 target_link_libraries(pjproject ${PJPROJECT_LIBRARIES} ${PJPROJECT_PLATFORM_LIBRARIES})
 list(APPEND PJSIP_INSTALL_TARGETS pjproject)
+if (WIN32)
+    set (PJPROJECT_LINKER_FLAGS "")
+    foreach (LIB ${PJPROJECT_LIBRARIES})
+        get_target_property(LIB_LOCATION ${LIB} LOCATION)
+        if (LIB_LOCATION)
+            set (PJPROJECT_LINKER_FLAGS "${PJPROJECT_LINKER_FLAGS} ${LIB_LOCATION}")
+        endif()
+    endforeach()
+    set_target_properties(pjproject PROPERTIES STATIC_LIBRARY_FLAGS ${PJPROJECT_LINKER_FLAGS})
+endif()
 
 #    pjsip-apps/src/pjsua/android/jni/pjsua_app_callback.h
 #    pjsip-apps/src/pjsua/bb10/src/applicationui.h
