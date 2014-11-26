@@ -1,0 +1,23 @@
+#pragma once
+
+#cmakedefine USE_PJMEDIA_ADVERTISE_RTCP
+#ifdef USE_PJMEDIA_ADVERTISE_RTCP
+#   define PJMEDIA_ADVERTISE_RTCP 1
+#else
+#   define PJMEDIA_ADVERTISE_RTCP 0
+#endif
+
+#cmakedefine USE_OPENSSL_SSL_TLS_SUPPORT
+#cmakedefine HAS_OPENSSL_HEADERS
+#ifdef USE_OPENSSL_SSL_TLS_SUPPORT
+#   ifdef HAS_OPENSSL_HEADERS
+#       define PJ_HAS_SSL_SOCK 1
+#       define PJSIP_HAS_TLS_TRANSPORT 1
+#   else
+#       define PJ_HAS_SSL_SOCK 0
+#       define PJSIP_HAS_TLS_TRANSPORT 0
+#   endif
+#else
+#   define PJ_HAS_SSL_SOCK 0
+#   define PJSIP_HAS_TLS_TRANSPORT 0
+#endif
