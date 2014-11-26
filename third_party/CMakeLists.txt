@@ -27,10 +27,8 @@ set (BASECLASSES_SOURCES
     BaseClasses/wxlist.cpp
     BaseClasses/wxutil.cpp
 )
-add_library(baseclasses STATIC ${BASECLASSES_HEADERS} ${BASECLASSES_SOURCES})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS baseclasses)
+add_library(baseclasses OBJECT ${BASECLASSES_HEADERS} ${BASECLASSES_SOURCES})
 set_property(TARGET baseclasses APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/baseclasses)
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS baseclasses)
 
 #    bdsound/include/bdimad.h
 #    build/gsm/config.h
@@ -151,8 +149,7 @@ if (WIN32)
         portaudio/src/os/win/pa_win_waveformat.c
         portaudio/src/os/win/pa_x86_plain_converters.c
     )
-    add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
-    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS portaudio)
+    add_library(portaudio OBJECT ${PORTAUDIO_SOURCES})
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/include)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/common)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/os/win)
@@ -174,8 +171,7 @@ elseif(UNIX)
         build/portaudio/src/pa_unix_oss.c
         build/portaudio/src/pa_unix_util.c
     )
-    add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
-    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS portaudio)
+    add_library(portaudio OBJECT ${PORTAUDIO_SOURCES})
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/portaudio/src)
     set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_SYS_SOUNDCARD_H)
     set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_LINUX_SOUNDCARD_H)
@@ -210,8 +206,7 @@ set (G7221_SOURCES
     g7221/encode/encoder.c
     g7221/encode/sam2coef.c
 )
-add_library(g7221codec STATIC ${G7221_HEADERS} ${G7221_SOURCES})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS g7221codec)
+add_library(g7221codec OBJECT ${G7221_HEADERS} ${G7221_SOURCES})
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR})
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/g7221/common)
 
@@ -266,8 +261,7 @@ if (WIN32)
     )
 elseif(UNIX)
 endif()
-add_library(gsmcodec STATIC ${GSM_SOURCES} ${GSM_HEADERS})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS gsmcodec)
+add_library(gsmcodec OBJECT ${GSM_SOURCES} ${GSM_HEADERS})
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/gsm/inc)
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/gsm)
 
@@ -323,8 +317,7 @@ set(ILBC_SOURCES
     ilbc/StateSearchW.c
     ilbc/syntFilter.c
 )
-add_library(ilbccodec STATIC ${ILBC_SOURCES} ${ILBC_HEADERS})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS ilbccodec)
+add_library(ilbccodec OBJECT ${ILBC_SOURCES} ${ILBC_HEADERS})
 
 #    resample/src/libresample_dll.c
 
@@ -339,8 +332,7 @@ set (RESAMBLE_HEADERS
 set (RESAMPLE_SOURCES
     resample/src/resamplesubs.c
 )
-add_library(resample STATIC ${RESAMPLE_SOURCES})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS resample)
+add_library(resample OBJECT ${RESAMPLE_SOURCES})
 set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/resample)
 set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/resample/include)
 
@@ -459,8 +451,7 @@ set (SPEEX_SOURCES
     speex/libspeex/vq.c
     speex/libspeex/window.c
 )
-add_library(speex STATIC ${SPEEX_SOURCES} ${SPEEX_HEADERS})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS speex)
+add_library(speex OBJECT ${SPEEX_SOURCES} ${SPEEX_HEADERS})
 set_property(TARGET speex APPEND PROPERTY COMPILE_FLAGS -DHAVE_CONFIG_H)
 set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/speex)
 set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/speex/include)
@@ -558,8 +549,7 @@ elseif(UNIX)
         srtp/crypto/replay/ut_sim.c
     )
 endif()
-add_library(srtp STATIC ${SRTP_SOURCES} ${SRTP_HEADERS})
-list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS srtp)
+add_library(srtp OBJECT ${SRTP_SOURCES} ${SRTP_HEADERS})
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/srtp)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/include)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/crypto/include)
@@ -576,17 +566,13 @@ if (WIN32)
         milenage/milenage.c
         milenage/rijndael.c
     )
-    add_library(milenage STATIC ${MILENAGE_SOURCES})
-    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS milenage)
+    add_library(milenage OBJECT ${MILENAGE_SOURCES})
 
     set (MP3_SOURCES
         mp3/BladeMP3EncDLL.h
         mp3/mp3_port.h
         mp3/mp3_writer.c
     )
-    add_library(mp3 STATIC ${MP3_SOURCES})
-    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS mp3)
+    add_library(mp3 OBJECT ${MP3_SOURCES})
 
 endif()
-
-install (TARGETS ${PJSIP_THIRD_PARTY_INSTALL_TARGETS} DESTINATION lib)

@@ -131,6 +131,7 @@ typedef void pj_log_func(int level, const char *data, int len);
  */
 PJ_DECL(void) pj_log_write(int level, const char *buffer, int len);
 
+#define PJ_LOG_FLUSH() PJ_LOG(1,(__FILE__, NULL))
 
 #if PJ_LOG_MAX_LEVEL >= 1
 

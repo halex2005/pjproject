@@ -3,8 +3,8 @@ project(pjproject)
 
 option(USE_PJMEDIA_ADVERTISE_RTCP  "option to add string like a=rtcp into SDP"  ON)
 option(USE_OPENSSL_SSL_TLS_SUPPORT "option to use SSL and TLS support in PJSIP" ON)
+option(MSVC_ADD_BUILDINFO_TO_PJPROJECT "option to add VS-specific info to library name like $(Configuration). Beware, cmake's install option would be inaccessible." OFF)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 if (WIN32)
     if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
         add_definitions(-DPJ_M_X86_64=1)
@@ -17,6 +17,7 @@ if (WIN32)
 elseif(UNIX)
     #requires run ./configure before build
     add_definitions(-DPJ_AUTOCONF=1)
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 endif()
 
 include_directories(.)
@@ -235,8 +236,7 @@ elseif(UNIX)
         pjlib/src/pj/os_timestamp_posix.c
     )
 endif()
-add_library(pjlib STATIC ${PJLIB_SOURCES} ${PJLIB_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjlib)
+add_library(pjlib OBJECT ${PJLIB_SOURCES} ${PJLIB_HEADERS})
 
 #    pjlib/src/pjlib++-test/main.cpp
 #    pjlib/src/pjlib-samples/except.c
@@ -352,8 +352,7 @@ set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/symbols.c
     pjlib-util/src/pjlib-util/xml.c
 )
-add_library(pjlib_util STATIC ${PJLIB_UTIL_SOURCES} ${PJLIB_UTIL_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjlib_util)
+add_library(pjlib_util OBJECT ${PJLIB_UTIL_SOURCES} ${PJLIB_UTIL_HEADERS})
 
 #    pjlib-util/src/pjlib-util-test/main_rtems.c
 #    pjlib-util/src/pjlib-util-test/test.h
@@ -546,7 +545,7 @@ set(PJMEDIA_SOURCES
     pjmedia/src/pjmedia/wave.c
     pjmedia/src/pjmedia/wsola.c
 )
-add_library(pjmedia STATIC ${PJMEDIA_SOURCES} ${PJMEDIA_HEADERS})
+add_library(pjmedia OBJECT ${PJMEDIA_SOURCES} ${PJMEDIA_HEADERS})
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/portaudio/include)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
@@ -556,7 +555,6 @@ set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_
 if (NOT "$ENV{DXSDK_DIR}" STREQUAL "")
     set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
 endif()
-list(APPEND PJSIP_INSTALL_TARGETS pjmedia)
 
 
 #    pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
@@ -585,12 +583,11 @@ elseif(UNIX)
         pjmedia/src/pjmedia-audiodev/opensl_dev.c
     )
 endif()
-add_library(pjmedia_audiodev STATIC ${PJMEDIA_AUDIODEV_SOURCES})
+add_library(pjmedia_audiodev OBJECT ${PJMEDIA_AUDIODEV_SOURCES})
 set_property(TARGET pjmedia_audiodev APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/portaudio/include)
 if(UNIX)
     set_property(TARGET pjmedia_audiodev APPEND PROPERTY COMPILE_FLAGS -DPJMEDIA_AUDIO_DEV_HAS_WMME=0)
 endif()
-list(APPEND PJSIP_INSTALL_TARGETS pjmedia_audiodev)
 
 
 set (PJMEDIA_CODEC_HEADERS
@@ -623,11 +620,10 @@ if (WIN32)
     )
 elseif(UNIX)
 endif()
-add_library(pjmedia_codec STATIC ${PJMEDIA_CODEC_SOURCES} ${PJMEDIA_CODEC_HEADERS})
+add_library(pjmedia_codec OBJECT ${PJMEDIA_CODEC_SOURCES} ${PJMEDIA_CODEC_HEADERS})
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
-list(APPEND PJSIP_INSTALL_TARGETS pjmedia_codec)
 
 set(PJMEDIA_VIDEODEV_SOURCES
     pjmedia/src/pjmedia-videodev/avi_dev.c
@@ -648,8 +644,7 @@ elseif(UNIX)
         pjmedia/src/pjmedia-videodev/v4l2_dev.c
     )
 endif()
-add_library(pjmedia_videodev STATIC ${PJMEDIA_VIDEODEV_SOURCES})
-list(APPEND PJSIP_INSTALL_TARGETS pjmedia_videodev)
+add_library(pjmedia_videodev OBJECT ${PJMEDIA_VIDEODEV_SOURCES})
 
 
 #    pjmedia/src/test/test.h
@@ -715,8 +710,7 @@ set(PJNATH_SOURCES
     pjnath/src/pjnath/turn_session.c
     pjnath/src/pjnath/turn_sock.c
 )
-add_library(pjnath STATIC ${PJNATH_SOURCES} ${PJNATH_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjnath)
+add_library(pjnath OBJECT ${PJNATH_SOURCES} ${PJNATH_HEADERS})
 
 #    pjnath/src/pjnath-test/server.h
 #    pjnath/src/pjnath-test/test.h
@@ -832,8 +826,7 @@ set(PJSIP_CORE_SOURCES
     pjsip/src/pjsip/sip_dialog.c
     pjsip/src/pjsip/sip_ua_layer.c
 )
-add_library(pjsip_core STATIC ${PJSIP_CORE_SOURCES} ${PJSIP_CORE_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjsip_core)
+add_library(pjsip_core OBJECT ${PJSIP_CORE_SOURCES} ${PJSIP_CORE_HEADERS})
 
 set(PJSIP_SIMPLE_HEADERS
     pjsip/include/pjsip_simple.h
@@ -862,8 +855,7 @@ set(PJSIP_SIMPLE_SOURCES
     pjsip/src/pjsip-simple/rpid.c
     pjsip/src/pjsip-simple/xpidf.c
 )
-add_library(pjsip_simple STATIC ${PJSIP_SIMPLE_SOURCES} ${PJSIP_SIMPLE_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjsip_simple)
+add_library(pjsip_simple OBJECT ${PJSIP_SIMPLE_SOURCES} ${PJSIP_SIMPLE_HEADERS})
 
 set(PJSIP_UA_HEADERS
     pjsip/include/pjsip_ua.h
@@ -882,8 +874,7 @@ set(PJSIP_UA_SOURCES
     pjsip/src/pjsip-ua/sip_timer.c
     pjsip/src/pjsip-ua/sip_xfer.c
 )
-add_library(pjsip_ua STATIC ${PJSIP_UA_SOURCES} ${PJSIP_UA_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjsip_ua)
+add_library(pjsip_ua OBJECT ${PJSIP_UA_SOURCES} ${PJSIP_UA_HEADERS})
 
 set(PJSUA_LIB_HEADERS
     pjsip/include/pjsua.h
@@ -901,8 +892,7 @@ set(PJSUA_LIB_SOURCES
     pjsip/src/pjsua-lib/pjsua_pres.c
     pjsip/src/pjsua-lib/pjsua_vid.c
 )
-add_library(pjsua_lib STATIC ${PJSUA_LIB_SOURCES} ${PJSUA_LIB_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjsua_lib)
+add_library(pjsua_lib OBJECT ${PJSUA_LIB_SOURCES} ${PJSUA_LIB_HEADERS})
 
 #    pjsip/src/pjsua2-test/main.cpp
 #    pjsip/src/test/main_rtems.c
@@ -965,8 +955,7 @@ set (PJSUA2_LIB_SOURCES
     pjsip/src/pjsua2/types.cpp
     pjsip/src/pjsua2/util.hpp
 )
-add_library(pjsua2_lib STATIC ${PJSUA2_LIB_SOURCES} ${PJSUA2_LIB_HEADERS})
-list(APPEND PJSIP_INSTALL_TARGETS pjsua2_lib)
+add_library(pjsua2_lib OBJECT ${PJSUA2_LIB_SOURCES} ${PJSUA2_LIB_HEADERS})
 
 set(SOURCE_FILES
     pjsip-apps/build/dummy.c
@@ -1060,9 +1049,31 @@ set (PJPROJECT_LIBRARIES
     speex
     srtp
 )
+set (PJPROJECT_LIBRARIES_OBJECTS
+    $<TARGET_OBJECTS:pjlib>
+    $<TARGET_OBJECTS:pjlib_util>
+    $<TARGET_OBJECTS:pjmedia>
+    $<TARGET_OBJECTS:pjmedia_audiodev>
+    $<TARGET_OBJECTS:pjmedia_codec>
+    $<TARGET_OBJECTS:pjmedia_videodev>
+    $<TARGET_OBJECTS:pjnath>
+    $<TARGET_OBJECTS:pjsip_core>
+    $<TARGET_OBJECTS:pjsip_simple>
+    $<TARGET_OBJECTS:pjsip_ua>
+    $<TARGET_OBJECTS:pjsua_lib>
+    $<TARGET_OBJECTS:pjsua2_lib>
+    $<TARGET_OBJECTS:baseclasses>
+    $<TARGET_OBJECTS:g7221codec>
+    $<TARGET_OBJECTS:gsmcodec>
+    $<TARGET_OBJECTS:ilbccodec>
+    $<TARGET_OBJECTS:portaudio>
+    $<TARGET_OBJECTS:resample>
+    $<TARGET_OBJECTS:speex>
+    $<TARGET_OBJECTS:srtp>
+)
 if (WIN32)
+    list(APPEND PJPROJECT_LIBRARIES_OBJECTS $<TARGET_OBJECTS:milenage>)
     list(APPEND PJPROJECT_PLATFORM_LIBRARIES
-        milenage
         wsock32.lib
         ws2_32.lib
         ole32.lib
@@ -1087,18 +1098,11 @@ elseif(UNIX)
         vo-amrwbenc
     )
 endif()
-add_library(pjproject STATIC pjmedia/src/pjmedia/dummy.c)
-target_link_libraries(pjproject ${PJPROJECT_LIBRARIES} ${PJPROJECT_PLATFORM_LIBRARIES})
-list(APPEND PJSIP_INSTALL_TARGETS pjproject)
-if (WIN32)
-    set (PJPROJECT_LINKER_FLAGS "")
-    foreach (LIB ${PJPROJECT_LIBRARIES})
-        get_target_property(LIB_LOCATION ${LIB} LOCATION)
-        if (LIB_LOCATION)
-            set (PJPROJECT_LINKER_FLAGS "${PJPROJECT_LINKER_FLAGS} ${LIB_LOCATION}")
-        endif()
-    endforeach()
-    set_target_properties(pjproject PROPERTIES STATIC_LIBRARY_FLAGS ${PJPROJECT_LINKER_FLAGS})
+add_library(pjproject STATIC ${PJPROJECT_LIBRARIES_OBJECTS})
+set_target_properties(pjproject PROPERTIES PREFIX "lib")
+target_link_libraries(pjproject ${PJPROJECT_PLATFORM_LIBRARIES})
+if (WIN32 AND MSVC_ADD_BUILDINFO_TO_PJPROJECT)
+    set_target_properties(pjproject PROPERTIES OUTPUT_NAME "pjproject-$(Platform)-$(Configuration)-$(PlatformToolset)")
 endif()
 
 #    pjsip-apps/src/pjsua/android/jni/pjsua_app_callback.h
@@ -1147,7 +1151,7 @@ configure_file (
 )
 
 install (TARGETS pjsua                    DESTINATION bin)
-install (TARGETS ${PJSIP_INSTALL_TARGETS} DESTINATION lib)
+install (TARGETS pjproject                DESTINATION lib)
 install (DIRECTORY pjlib/include          DESTINATION .)
 install (DIRECTORY pjlib-util/include     DESTINATION .)
 install (DIRECTORY pjmedia/include        DESTINATION .)
