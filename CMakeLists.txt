@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(pjproject)
 
+option(USE_PJMEDIA_ADVERTISE_RTCP  "option to add string like a=rtcp into SDP"  ON)
+option(USE_OPENSSL_SSL_TLS_SUPPORT "option to use SSL and TLS support in PJSIP" ON)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 if (WIN32)
     if( CMAKE_SIZEOF_VOID_P EQUAL 8 )
@@ -115,6 +118,8 @@ set(PJLIB_HEADERS
     pjlib/include/pj/assert.h
     pjlib/include/pj/config.h
     pjlib/include/pj/config_site.h
+    pjlib/include/pj/config_site_cmake.h
+    pjlib/include/pj/config_site_cmake.in
     pjlib/include/pj/config_site_sample.h
     pjlib/include/pj/ctype.h
     pjlib/include/pj/doxygen.h
@@ -231,6 +236,7 @@ elseif(UNIX)
     )
 endif()
 add_library(pjlib STATIC ${PJLIB_SOURCES} ${PJLIB_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjlib)
 
 #    pjlib/src/pjlib++-test/main.cpp
 #    pjlib/src/pjlib-samples/except.c
@@ -347,6 +353,7 @@ set(PJLIB_UTIL_SOURCES
     pjlib-util/src/pjlib-util/xml.c
 )
 add_library(pjlib_util STATIC ${PJLIB_UTIL_SOURCES} ${PJLIB_UTIL_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjlib_util)
 
 #    pjlib-util/src/pjlib-util-test/main_rtems.c
 #    pjlib-util/src/pjlib-util-test/test.h
@@ -549,6 +556,8 @@ set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_
 if (NOT "$ENV{DXSDK_DIR}" STREQUAL "")
     set_property(TARGET pjmedia APPEND PROPERTY INCLUDE_DIRECTORIES $ENV{DXSDK_DIR}/include)
 endif()
+list(APPEND PJSIP_INSTALL_TARGETS pjmedia)
+
 
 #    pjmedia/src/pjmedia-audiodev/s60_g729_bitstream.h
 #    pjmedia/src/pjmedia-audiodev/symb_aps_dev.cpp
@@ -581,7 +590,7 @@ set_property(TARGET pjmedia_audiodev APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE
 if(UNIX)
     set_property(TARGET pjmedia_audiodev APPEND PROPERTY COMPILE_FLAGS -DPJMEDIA_AUDIO_DEV_HAS_WMME=0)
 endif()
-
+list(APPEND PJSIP_INSTALL_TARGETS pjmedia_audiodev)
 
 
 set (PJMEDIA_CODEC_HEADERS
@@ -618,6 +627,7 @@ add_library(pjmedia_codec STATIC ${PJMEDIA_CODEC_SOURCES} ${PJMEDIA_CODEC_HEADER
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/build/speex)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party/speex/include)
 set_property(TARGET pjmedia_codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/third_party)
+list(APPEND PJSIP_INSTALL_TARGETS pjmedia_codec)
 
 set(PJMEDIA_VIDEODEV_SOURCES
     pjmedia/src/pjmedia-videodev/avi_dev.c
@@ -639,6 +649,8 @@ elseif(UNIX)
     )
 endif()
 add_library(pjmedia_videodev STATIC ${PJMEDIA_VIDEODEV_SOURCES})
+list(APPEND PJSIP_INSTALL_TARGETS pjmedia_videodev)
+
 
 #    pjmedia/src/test/test.h
 #    pjmedia/src/test/audio_tool.c
@@ -704,6 +716,7 @@ set(PJNATH_SOURCES
     pjnath/src/pjnath/turn_sock.c
 )
 add_library(pjnath STATIC ${PJNATH_SOURCES} ${PJNATH_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjnath)
 
 #    pjnath/src/pjnath-test/server.h
 #    pjnath/src/pjnath-test/test.h
@@ -820,6 +833,7 @@ set(PJSIP_CORE_SOURCES
     pjsip/src/pjsip/sip_ua_layer.c
 )
 add_library(pjsip_core STATIC ${PJSIP_CORE_SOURCES} ${PJSIP_CORE_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjsip_core)
 
 set(PJSIP_SIMPLE_HEADERS
     pjsip/include/pjsip_simple.h
@@ -849,6 +863,7 @@ set(PJSIP_SIMPLE_SOURCES
     pjsip/src/pjsip-simple/xpidf.c
 )
 add_library(pjsip_simple STATIC ${PJSIP_SIMPLE_SOURCES} ${PJSIP_SIMPLE_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjsip_simple)
 
 set(PJSIP_UA_HEADERS
     pjsip/include/pjsip_ua.h
@@ -868,6 +883,7 @@ set(PJSIP_UA_SOURCES
     pjsip/src/pjsip-ua/sip_xfer.c
 )
 add_library(pjsip_ua STATIC ${PJSIP_UA_SOURCES} ${PJSIP_UA_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjsip_ua)
 
 set(PJSUA_LIB_HEADERS
     pjsip/include/pjsua.h
@@ -886,6 +902,7 @@ set(PJSUA_LIB_SOURCES
     pjsip/src/pjsua-lib/pjsua_vid.c
 )
 add_library(pjsua_lib STATIC ${PJSUA_LIB_SOURCES} ${PJSUA_LIB_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjsua_lib)
 
 #    pjsip/src/pjsua2-test/main.cpp
 #    pjsip/src/test/main_rtems.c
@@ -949,6 +966,7 @@ set (PJSUA2_LIB_SOURCES
     pjsip/src/pjsua2/util.hpp
 )
 add_library(pjsua2_lib STATIC ${PJSUA2_LIB_SOURCES} ${PJSUA2_LIB_HEADERS})
+list(APPEND PJSIP_INSTALL_TARGETS pjsua2_lib)
 
 set(SOURCE_FILES
     pjsip-apps/build/dummy.c
@@ -1043,7 +1061,7 @@ set (PJPROJECT_LIBRARIES
     srtp
 )
 if (WIN32)
-    LIST(APPEND PJPROJECT_LIBRARIES
+    LIST(APPEND PJPROJECT_PLATFORM_LIBRARIES
         milenage
         wsock32.lib
         ws2_32.lib
@@ -1051,7 +1069,7 @@ if (WIN32)
         dsound.lib
     )
 elseif(UNIX)
-    LIST(APPEND PJPROJECT_LIBRARIES
+    LIST(APPEND PJPROJECT_PLATFORM_LIBRARIES
         m
         rt
         pthread
@@ -1070,7 +1088,8 @@ elseif(UNIX)
     )
 endif()
 add_library(pjproject STATIC pjmedia/src/pjmedia/dummy.c)
-target_link_libraries(pjproject ${PJPROJECT_LIBRARIES})
+target_link_libraries(pjproject ${PJPROJECT_LIBRARIES} ${PJPROJECT_PLATFORM_LIBRARIES})
+list(APPEND PJSIP_INSTALL_TARGETS pjproject)
 
 #    pjsip-apps/src/pjsua/android/jni/pjsua_app_callback.h
 #    pjsip-apps/src/pjsua/bb10/src/applicationui.h
@@ -1108,3 +1127,19 @@ set (PJSUA_SOURCES
 )
 add_executable(pjsua ${PJSUA_SOURCES})
 target_link_libraries(pjsua pjproject)
+
+include(CheckIncludeFiles)
+check_include_files("openssl/bio.h;openssl/err.h;openssl/x509v3.h;openssl/ssl.h" HAS_OPENSSL_HEADERS)
+
+configure_file (
+    "${PROJECT_SOURCE_DIR}/pjlib/include/pj/config_site_cmake.in"
+    "${PROJECT_SOURCE_DIR}/pjlib/include/pj/config_site_cmake.h"
+)
+
+install (TARGETS pjsua                    DESTINATION bin)
+install (TARGETS ${PJSIP_INSTALL_TARGETS} DESTINATION lib)
+install (DIRECTORY pjlib/include          DESTINATION .)
+install (DIRECTORY pjlib-util/include     DESTINATION .)
+install (DIRECTORY pjmedia/include        DESTINATION .)
+install (DIRECTORY pjnath/include         DESTINATION .)
+install (DIRECTORY pjsip/include          DESTINATION .)
