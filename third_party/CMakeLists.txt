@@ -1,20 +1,21 @@
-#    BaseClasses/amfilter.h
-#    BaseClasses/combase.h
-#    BaseClasses/ctlutil.h
-#    BaseClasses/fourcc.h
-#    BaseClasses/measure.h
-#    BaseClasses/msgthrd.h
-#    BaseClasses/mtype.h
-#    BaseClasses/refclock.h
-#    BaseClasses/reftime.h
-#    BaseClasses/renbase.h
-#    BaseClasses/seekpt.h
-#    BaseClasses/streams.h
-#    BaseClasses/wxdebug.h
-#    BaseClasses/wxlist.h
-#    BaseClasses/wxutil.h
-
-set(BASECLASSES_SOURCES
+set (BASECLASSES_HEADERS
+    BaseClasses/amfilter.h
+    BaseClasses/combase.h
+    BaseClasses/ctlutil.h
+    BaseClasses/fourcc.h
+    BaseClasses/measure.h
+    BaseClasses/msgthrd.h
+    BaseClasses/mtype.h
+    BaseClasses/refclock.h
+    BaseClasses/reftime.h
+    BaseClasses/renbase.h
+    BaseClasses/seekpt.h
+    BaseClasses/streams.h
+    BaseClasses/wxdebug.h
+    BaseClasses/wxlist.h
+    BaseClasses/wxutil.h
+)
+set (BASECLASSES_SOURCES
     BaseClasses/amfilter.cpp
     BaseClasses/amvideo.cpp
     BaseClasses/arithutil.cpp
@@ -26,8 +27,10 @@ set(BASECLASSES_SOURCES
     BaseClasses/wxlist.cpp
     BaseClasses/wxutil.cpp
 )
-add_library(baseclasses STATIC ${BASECLASSES_SOURCES})
+add_library(baseclasses STATIC ${BASECLASSES_HEADERS} ${BASECLASSES_SOURCES})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS baseclasses)
 set_property(TARGET baseclasses APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/baseclasses)
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS baseclasses)
 
 #    bdsound/include/bdimad.h
 #    build/gsm/config.h
@@ -122,7 +125,7 @@ set_property(TARGET baseclasses APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURR
 #    portaudio/src/hostapi/wasapi/pa_win_wasapi.cpp
 #    portaudio/src/hostapi/wdmks/pa_win_wdmks.c
 
-set(PORTAUDIO_SOURCES
+set (PORTAUDIO_SOURCES
 #    portaudio/src/hostapi/asio/iasiothiscallresolver.cpp
 #    portaudio/src/hostapi/asio/pa_asio.cpp
 #    portaudio/src/hostapi/jack/pa_jack.c
@@ -149,6 +152,7 @@ if (WIN32)
         portaudio/src/os/win/pa_x86_plain_converters.c
     )
     add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
+    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS portaudio)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/include)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/common)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/portaudio/src/os/win)
@@ -171,6 +175,7 @@ elseif(UNIX)
         build/portaudio/src/pa_unix_util.c
     )
     add_library(portaudio STATIC ${PORTAUDIO_SOURCES})
+    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS portaudio)
     set_property(TARGET portaudio APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/portaudio/src)
     set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_SYS_SOUNDCARD_H)
     set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS HAVE_LINUX_SOUNDCARD_H)
@@ -180,19 +185,20 @@ elseif(UNIX)
     set_property(TARGET portaudio APPEND PROPERTY COMPILE_DEFINITIONS PA_USE_OSS=1)
 endif()
 
-#    g7221/common/basic_op.h
-#    g7221/common/basic_op_i.h
-#    g7221/common/config.h
-#    g7221/common/count.h
-#    g7221/common/defs.h
-#    g7221/common/huff_def.h
-#    g7221/common/huff_tab.h
-#    g7221/common/tables.h
-#    g7221/common/typedef.h
-#    g7221/decode/dct4_s.h
-#    g7221/encode/dct4_a.h
-
-set(G7221_SOURCES
+set (G7221_HEADERS
+    g7221/common/basic_op.h
+    g7221/common/basic_op_i.h
+    g7221/common/config.h
+    g7221/common/count.h
+    g7221/common/defs.h
+    g7221/common/huff_def.h
+    g7221/common/huff_tab.h
+    g7221/common/tables.h
+    g7221/common/typedef.h
+    g7221/decode/dct4_s.h
+    g7221/encode/dct4_a.h
+)
+set (G7221_SOURCES
     g7221/common/basic_op.c
     g7221/common/common.c
     g7221/common/huff_tab.c
@@ -204,22 +210,12 @@ set(G7221_SOURCES
     g7221/encode/encoder.c
     g7221/encode/sam2coef.c
 )
-add_library(g7221codec STATIC ${G7221_SOURCES})
+add_library(g7221codec STATIC ${G7221_HEADERS} ${G7221_SOURCES})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS g7221codec)
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR})
 set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/g7221/common)
 
-#    gsm/inc/config.h
-#    gsm/inc/gsm.h
-#    gsm/inc/private.h
-#    gsm/inc/proto.h
-#    gsm/inc/unproto.h
-#    gsm/inc/toast.h
 #    gsm/add-test/add_test.c
-#    gsm/src/toast.c
-#    gsm/src/toast_alaw.c
-#    gsm/src/toast_audio.c
-#    gsm/src/toast_lin.c
-#    gsm/src/toast_ulaw.c
 #    gsm/tls/bitter.c
 #    gsm/tls/ginger.c
 #    gsm/tls/sour.c
@@ -231,7 +227,20 @@ set_property(TARGET g7221codec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRE
 #    gsm/tst/gsm2cod.c
 #    gsm/tst/lin2cod.c
 #    gsm/tst/lin2txt.c
+#    gsm/src/toast.c
+#    gsm/src/toast_alaw.c
+#    gsm/src/toast_audio.c
+#    gsm/src/toast_lin.c
+#    gsm/src/toast_ulaw.c
 
+set (GSM_HEADERS
+    gsm/inc/config.h
+    gsm/inc/gsm.h
+    gsm/inc/private.h
+    gsm/inc/proto.h
+    gsm/inc/unproto.h
+    gsm/inc/toast.h
+)
 set(GSM_SOURCES
     gsm/src/add.c
     gsm/src/code.c
@@ -257,36 +266,38 @@ if (WIN32)
     )
 elseif(UNIX)
 endif()
-add_library(gsmcodec STATIC ${GSM_SOURCES})
+add_library(gsmcodec STATIC ${GSM_SOURCES} ${GSM_HEADERS})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS gsmcodec)
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/gsm/inc)
 set_property(TARGET gsmcodec APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/gsm)
 
-#    ilbc/anaFilter.h
-#    ilbc/constants.h
-#    ilbc/createCB.h
-#    ilbc/doCPLC.h
-#    ilbc/enhancer.h
-#    ilbc/filter.h
-#    ilbc/FrameClassify.h
-#    ilbc/gainquant.h
-#    ilbc/getCBvec.h
-#    ilbc/helpfun.h
-#    ilbc/hpInput.h
-#    ilbc/hpOutput.h
-#    ilbc/iCBConstruct.h
-#    ilbc/iCBSearch.h
-#    ilbc/iLBC_decode.h
-#    ilbc/iLBC_encode.h
-#    ilbc/LPCdecode.h
-#    ilbc/LPCencode.h
-#    ilbc/lsf.h
-#    ilbc/packing.h
-#    ilbc/StateConstructW.h
-#    ilbc/StateSearchW.h
-#    ilbc/syntFilter.h
-#    ilbc/iLBC_define.h
-#    ilbc/iLBC_test.c
-
+set (ILBC_HEADERS
+    ilbc/anaFilter.h
+    ilbc/constants.h
+    ilbc/createCB.h
+    ilbc/doCPLC.h
+    ilbc/enhancer.h
+    ilbc/filter.h
+    ilbc/FrameClassify.h
+    ilbc/gainquant.h
+    ilbc/getCBvec.h
+    ilbc/helpfun.h
+    ilbc/hpInput.h
+    ilbc/hpOutput.h
+    ilbc/iCBConstruct.h
+    ilbc/iCBSearch.h
+    ilbc/iLBC_decode.h
+    ilbc/iLBC_encode.h
+    ilbc/LPCdecode.h
+    ilbc/LPCencode.h
+    ilbc/lsf.h
+    ilbc/packing.h
+    ilbc/StateConstructW.h
+    ilbc/StateSearchW.h
+    ilbc/syntFilter.h
+    ilbc/iLBC_define.h
+    ilbc/iLBC_test.c
+)
 set(ILBC_SOURCES
     ilbc/anaFilter.c
     ilbc/constants.c
@@ -312,36 +323,27 @@ set(ILBC_SOURCES
     ilbc/StateSearchW.c
     ilbc/syntFilter.c
 )
-add_library(ilbccodec STATIC ${ILBC_SOURCES})
+add_library(ilbccodec STATIC ${ILBC_SOURCES} ${ILBC_HEADERS})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS ilbccodec)
 
-#    build/resample/config.h
-#    resample/src/largefilter.h
-#    resample/include/resamplesubs.h
-#    resample/src/resample.h
-#    resample/src/smallfilter.h
-#    resample/src/stddefs.h
 #    resample/src/libresample_dll.c
 
+set (RESAMBLE_HEADERS
+    build/resample/config.h
+    resample/include/resamplesubs.h
+    resample/src/largefilter.h
+    resample/src/resample.h
+    resample/src/smallfilter.h
+    resample/src/stddefs.h
+)
 set (RESAMPLE_SOURCES
     resample/src/resamplesubs.c
 )
 add_library(resample STATIC ${RESAMPLE_SOURCES})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS resample)
 set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/resample)
 set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/resample/include)
 
-#    build/speex/speex/speex_config_types.h
-#    build/speex/config.h
-#    speex/include/speex/speex.h
-#    speex/include/speex/speex_bits.h
-#    speex/include/speex/speex_buffer.h
-#    speex/include/speex/speex_callbacks.h
-#    speex/include/speex/speex_echo.h
-#    speex/include/speex/speex_header.h
-#    speex/include/speex/speex_jitter.h
-#    speex/include/speex/speex_preprocess.h
-#    speex/include/speex/speex_resampler.h
-#    speex/include/speex/speex_stereo.h
-#    speex/include/speex/speex_types.h
 #    speex/libspeex/_kiss_fft_guts.h
 #    speex/libspeex/arch.h
 #    speex/libspeex/cb_search.h
@@ -402,6 +404,21 @@ set_property(TARGET resample APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT
 #    speex/libspeex/scal.c
 #    speex/libspeex/vorbis_psy.c
 
+set (SPEEX_HEADERS
+    build/speex/speex/speex_config_types.h
+    build/speex/config.h
+    speex/include/speex/speex.h
+    speex/include/speex/speex_bits.h
+    speex/include/speex/speex_buffer.h
+    speex/include/speex/speex_callbacks.h
+    speex/include/speex/speex_echo.h
+    speex/include/speex/speex_header.h
+    speex/include/speex/speex_jitter.h
+    speex/include/speex/speex_preprocess.h
+    speex/include/speex/speex_resampler.h
+    speex/include/speex/speex_stereo.h
+    speex/include/speex/speex_types.h
+)
 set (SPEEX_SOURCES
     speex/libspeex/bits.c
     speex/libspeex/cb_search.c
@@ -442,45 +459,12 @@ set (SPEEX_SOURCES
     speex/libspeex/vq.c
     speex/libspeex/window.c
 )
-add_library(speex STATIC ${SPEEX_SOURCES})
+add_library(speex STATIC ${SPEEX_SOURCES} ${SPEEX_HEADERS})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS speex)
 set_property(TARGET speex APPEND PROPERTY COMPILE_FLAGS -DHAVE_CONFIG_H)
 set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/speex)
 set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/speex/include)
 
-#    build/srtp/srtp_config.h
-#    srtp/crypto/include/aes.h
-#    srtp/crypto/include/aes_cbc.h
-#    srtp/crypto/include/aes_icm.h
-#    srtp/crypto/include/alloc.h
-#    srtp/crypto/include/auth.h
-#    srtp/crypto/include/cipher.h
-#    srtp/crypto/include/crypto.h
-#    srtp/crypto/include/crypto_kernel.h
-#    srtp/crypto/include/crypto_math.h
-#    srtp/crypto/include/crypto_types.h
-#    srtp/crypto/include/cryptoalg.h
-#    srtp/crypto/include/datatypes.h
-#    srtp/crypto/include/err.h
-#    srtp/crypto/include/gf2_8.h
-#    srtp/crypto/include/hmac.h
-#    srtp/crypto/include/integers.h
-#    srtp/crypto/include/kernel_compat.h
-#    srtp/crypto/include/key.h
-#    srtp/crypto/include/null_auth.h
-#    srtp/crypto/include/null_cipher.h
-#    srtp/crypto/include/prng.h
-#    srtp/crypto/include/rand_source.h
-#    srtp/crypto/include/rdb.h
-#    srtp/crypto/include/rdbx.h
-#    srtp/crypto/include/sha1.h
-#    srtp/crypto/include/stat.h
-#    srtp/crypto/include/xfm.h
-#    srtp/include/getopt_s.h
-#    srtp/include/rtp.h
-#    srtp/include/rtp_priv.h
-#    srtp/include/srtp.h
-#    srtp/include/srtp_priv.h
-#    srtp/include/ut_sim.h
 #    srtp/crypto/test/aes_calc.c
 #    srtp/crypto/test/auth_driver.c
 #    srtp/crypto/test/cipher_driver.c
@@ -505,6 +489,42 @@ set_property(TARGET speex APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SO
 #    srtp/crypto/rng/rand_linux_kernel.c
 #    srtp/tables/aes_tables.c
 
+set (SRTP_HEADERS
+    build/srtp/srtp_config.h
+    srtp/crypto/include/aes.h
+    srtp/crypto/include/aes_cbc.h
+    srtp/crypto/include/aes_icm.h
+    srtp/crypto/include/alloc.h
+    srtp/crypto/include/auth.h
+    srtp/crypto/include/cipher.h
+    srtp/crypto/include/crypto.h
+    srtp/crypto/include/crypto_kernel.h
+    srtp/crypto/include/crypto_math.h
+    srtp/crypto/include/crypto_types.h
+    srtp/crypto/include/cryptoalg.h
+    srtp/crypto/include/datatypes.h
+    srtp/crypto/include/err.h
+    srtp/crypto/include/gf2_8.h
+    srtp/crypto/include/hmac.h
+    srtp/crypto/include/integers.h
+    srtp/crypto/include/kernel_compat.h
+    srtp/crypto/include/key.h
+    srtp/crypto/include/null_auth.h
+    srtp/crypto/include/null_cipher.h
+    srtp/crypto/include/prng.h
+    srtp/crypto/include/rand_source.h
+    srtp/crypto/include/rdb.h
+    srtp/crypto/include/rdbx.h
+    srtp/crypto/include/sha1.h
+    srtp/crypto/include/stat.h
+    srtp/crypto/include/xfm.h
+    srtp/include/getopt_s.h
+    srtp/include/rtp.h
+    srtp/include/rtp_priv.h
+    srtp/include/srtp.h
+    srtp/include/srtp_priv.h
+    srtp/include/ut_sim.h
+)
 set (SRTP_SOURCES
     srtp/crypto/cipher/aes.c
     srtp/crypto/cipher/aes_cbc.c
@@ -538,7 +558,8 @@ elseif(UNIX)
         srtp/crypto/replay/ut_sim.c
     )
 endif()
-add_library(srtp STATIC ${SRTP_SOURCES})
+add_library(srtp STATIC ${SRTP_SOURCES} ${SRTP_HEADERS})
+list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS srtp)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/build/srtp)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/include)
 set_property(TARGET srtp APPEND PROPERTY INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/srtp/crypto/include)
@@ -556,6 +577,7 @@ if (WIN32)
         milenage/rijndael.c
     )
     add_library(milenage STATIC ${MILENAGE_SOURCES})
+    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS milenage)
 
     set (MP3_SOURCES
         mp3/BladeMP3EncDLL.h
@@ -563,6 +585,8 @@ if (WIN32)
         mp3/mp3_writer.c
     )
     add_library(mp3 STATIC ${MP3_SOURCES})
+    list(APPEND PJSIP_THIRD_PARTY_INSTALL_TARGETS mp3)
 
 endif()
 
+install (TARGETS ${PJSIP_THIRD_PARTY_INSTALL_TARGETS} DESTINATION lib)
