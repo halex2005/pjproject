@@ -512,6 +512,12 @@ PJ_DEF(pj_status_t) pjsip_endpt_create_response( pjsip_endpoint *endpt,
     /* Set initial reference count to 1. */
     pjsip_tx_data_add_ref(tdata);
 
+    /* Set source transport to origin */
+    pjsip_tpselector originSelector;
+    originSelector.type = PJSIP_TPSELECTOR_TRANSPORT;
+    originSelector.u.transport = rdata->tp_info.transport;
+    pjsip_tx_data_set_transport(tdata, &originSelector);
+
     /* Create new response message. */
     tdata->msg = msg = pjsip_msg_create(tdata->pool, PJSIP_RESPONSE_MSG);
 
