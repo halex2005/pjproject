@@ -28,5 +28,3 @@
 #else
 #   define PJMEDIA_HAS_GSM_CODEC 0
 #endif
-
-#endif
