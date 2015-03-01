@@ -1,8 +1,9 @@
 cmake_minimum_required(VERSION 2.8.4)
 project(pjproject)
 
-option(USE_PJMEDIA_ADVERTISE_RTCP  "option to add string like a=rtcp into SDP"  ON)
-option(USE_OPENSSL_SSL_TLS_SUPPORT "option to use SSL and TLS support in PJSIP" ON)
+option(PJPROJECT_USE_PJMEDIA_ADVERTISE_RTCP  "option to add string like a=rtcp into SDP"  ON)
+option(PJPROJECT_USE_PJMEDIA_GSM_CODEC       "option to add GSM/8000 codec support"       ON)
+option(PJPROJECT_USE_OPENSSL_SSL_TLS_SUPPORT "option to use SSL and TLS support in PJSIP" ON)
 option(MSVC_ADD_BUILDINFO_TO_PJPROJECT "option to add VS-specific info to library name like $(Configuration). Beware, cmake's install option would be inaccessible." OFF)
 
 if (WIN32)
