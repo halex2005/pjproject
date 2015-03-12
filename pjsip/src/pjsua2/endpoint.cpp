@@ -610,7 +610,10 @@ void Endpoint::on_incoming_call(pjsua_acc_id acc_id, pjsua_call_id call_id,
     /* disconnect if callback doesn't handle the call */
     pjsua_call_info ci;
 
-    pjsua_call_get_info(call_id, &ci);
+    pj_status_t getCallInfoStatus = pjsua_call_get_info(call_id, &ci);
+    if (getCallInfoStatus == PJSIP_ESESSIONTERMINATED) return;
+    PJSUA2_CHECK_EXPR(getCallInfoStatus);
+
     if (!pjsua_call_get_user_data(call_id) &&
 	ci.state != PJSIP_INV_STATE_DISCONNECTED)
     {
